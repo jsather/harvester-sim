@@ -1,0 +1,7 @@
+<launch>
+  <arg name="harvester_robotName" default="harvester1"/>
+
+  <!-- Load the URDF into the ROS Parameter Server -->
+  <param name="robot_description"
+    command="$(find xacro)/xacro --inorder '$(find harvester_description)/urdf/$(arg harvester_robotName).xacro'" />
+</launch>

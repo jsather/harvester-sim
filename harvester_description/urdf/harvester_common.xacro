@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+
+<root xmlns:xi="http://www.w3.org/2001/XInclude"
+	xmlns:gazebo="http://playerstage.sourceforge.net/gazebo/xmlschema/#gz"
+    xmlns:model="http://playerstage.sourceforge.net/gazebo/xmlschema/#model"
+	xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
+	xmlns:body="http://playerstage.sourceforge.net/gazebo/xmlschema/#body"
+    xmlns:geom="http://playerstage.sourceforge.net/gazebo/xmlschema/#geom"
+    xmlns:joint="http://playerstage.sourceforge.net/gazebo/xmlschema/#joint"
+	xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
+	xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
+	xmlns:rendering="http://playerstage.sourceforge.net/gazebo/xmlschema/#rendering"
+    xmlns:renderable="http://playerstage.sourceforge.net/gazebo/xmlschema/#renderable"
+    xmlns:physics="http://playerstage.sourceforge.net/gazebo/xmlschema/#physics"
+	xmlns:xacro="http://ros.org/wiki/xacro">
+
+	<!-- Macro for creating fixed frame elements -->
+	<xacro:macro name="frame_element" params="element_name visual_mesh collision_mesh
+		                                        offset_x offset_y offset_z
+		                                        rot_r rot_p rot_y">
+	    <joint name="${element_name}_joint" type="fixed">
+				<origin xyz="${frame_offset_x} ${frame_offset_y} ${frame_offset_z}"
+					      rpy="${rot_r} ${rot_p} ${rot_y}"/>
+				<parent link="root"/>
+				<child link="${element_name}_link"/>
+			</joint>
+
+			<link name="${element_name}_link">
+				<collision>
+					<geometry>
+						<mesh filename="package://harvester_description/meshes/${collision_mesh}.STL"/>
+					</geometry>
+				</collision>
+
+				<visual>
+					<geometry>
+						<mesh filename="package://harvester_description/meshes/${visual_mesh}.STL"/>
+					</geometry>
+				</visual>
+			</link>
+	</xacro:macro>
+</root>

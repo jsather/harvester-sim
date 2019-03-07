@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: harvester_description
+    relative_path: urdf/harvester1.xacro
+    xacro_args: ""
+  SRDF:
+    relative_path: config/j2s6s200.srdf
+  CONFIG:
+    author_name: Jonathon Sather
+    author_email: jonathon.sather@gmail.com
+    generated_timestamp: 1537420772

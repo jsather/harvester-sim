@@ -1,0 +1,6232 @@
+<?xml version="1.0" ?>
+
+
+<sdf version="1.6">
+  <model name="strawb_plant">
+    <static>true</static>
+
+    <link name="dirt_link">
+      <inertial>
+        <mass>10</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+    </link>
+
+    <joint name="fixed to ground" type="revolute">
+      <parent>world</parent>
+      <child>dirt_link</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+
+    <link name= leaf_stem_link_1 >
+      <pose>0 0 0 0 -1.1118752201346294 -2.855283324099376 </pose>
+      <inertial>
+        <mass>1</mass>
+        <inertia> <!-- Modeled as slender rod -->
+          <ixx>1e-3</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.333e-2</iyy>
+          <iyz>0</iyz>
+          <izz>8.333e-2</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf_stem2.stl</uri>
+            <scale> 0.27814369694539104 0.27814369694539104 0.27814369694539104</scale>
+          </mesh>
+        </geometry>
+        <material> <!-- Green -->
+          <ambient>0.0 0.5 0.0 1.0</ambient>
+          <diffuse>0.0 0.5 0.0 1.0</diffuse>
+          <specular>0.1 0.1 0.1 1.0</specular>
+        </material>
+      </visual>
+    </link>
+
+    <link name= leaf_link_1_0 >
+      <pose> -0.07091805477179615
+             -0.02087812389515051
+             0.14961865947857272 0
+             0 -4.388718012580096  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf3.dae</uri>
+            <scale> 0.46261036838671715 0.46261036838671715 0.46261036838671715</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_1_1 >
+      <pose> -0.07091805477179615
+             -0.02087812389515051
+             0.14961865947857272 0
+             0 -3.0188122322373907  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf5.dae</uri>
+            <scale> 0.46261036838671715 0.46261036838671715 0.46261036838671715</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_1_2 >
+      <pose> -0.07091805477179615
+             -0.02087812389515051
+             0.14961865947857272 0
+             0 -1.4044714797840387  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf5.dae</uri>
+            <scale> 0.46261036838671715 0.46261036838671715 0.46261036838671715</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+
+    <joint name=leaf_dirt_joint_1 type="revolute">
+      <parent>dirt_link</parent>
+      <child>leaf_stem_link_1</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <link name= leaf_stem_link_2 >
+      <pose>0 0 0 0 -1.2419626022523254 -1.7988007818366125 </pose>
+      <inertial>
+        <mass>1</mass>
+        <inertia> <!-- Modeled as slender rod -->
+          <ixx>1e-3</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.333e-2</iyy>
+          <iyz>0</iyz>
+          <izz>8.333e-2</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf_stem2.stl</uri>
+            <scale> 0.3509352636275117 0.3509352636275117 0.3509352636275117</scale>
+          </mesh>
+        </geometry>
+        <material> <!-- Green -->
+          <ambient>0.0 0.5 0.0 1.0</ambient>
+          <diffuse>0.0 0.5 0.0 1.0</diffuse>
+          <specular>0.1 0.1 0.1 1.0</specular>
+        </material>
+      </visual>
+    </link>
+
+    <link name= leaf_link_2_0 >
+      <pose> -0.015369979733466417
+             -0.06623866472616066
+             0.1992792120390888 0
+             0 -3.3447870703105256  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf5.dae</uri>
+            <scale> 0.7309200883876396 0.7309200883876396 0.7309200883876396</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_2_1 >
+      <pose> -0.015369979733466417
+             -0.06623866472616066
+             0.1992792120390888 0
+             0 -1.866824191770106  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf4.dae</uri>
+            <scale> 0.7309200883876396 0.7309200883876396 0.7309200883876396</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_2_2 >
+      <pose> -0.015369979733466417
+             -0.06623866472616066
+             0.1992792120390888 0
+             0 -0.28833546461969073  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf1.dae</uri>
+            <scale> 0.7309200883876396 0.7309200883876396 0.7309200883876396</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+
+    <joint name=leaf_dirt_joint_2 type="revolute">
+      <parent>dirt_link</parent>
+      <child>leaf_stem_link_2</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <link name= leaf_stem_link_3 >
+      <pose>0 0 0 0 -1.0393426161571462 -2.6779019706231897 </pose>
+      <inertial>
+        <mass>1</mass>
+        <inertia> <!-- Modeled as slender rod -->
+          <ixx>1e-3</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.333e-2</iyy>
+          <iyz>0</iyz>
+          <izz>8.333e-2</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf_stem2.stl</uri>
+            <scale> 0.27431296344792655 0.27431296344792655 0.27431296344792655</scale>
+          </mesh>
+        </geometry>
+        <material> <!-- Green -->
+          <ambient>0.0 0.5 0.0 1.0</ambient>
+          <diffuse>0.0 0.5 0.0 1.0</diffuse>
+          <specular>0.1 0.1 0.1 1.0</specular>
+        </material>
+      </visual>
+    </link>
+
+    <link name= leaf_link_3_0 >
+      <pose> -0.07460342309063744
+             -0.03730572846345173
+             0.14188639320449514 0
+             0 -4.309876394711199  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf3.dae</uri>
+            <scale> 0.5801459386955711 0.5801459386955711 0.5801459386955711</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_3_1 >
+      <pose> -0.07460342309063744
+             -0.03730572846345173
+             0.14188639320449514 0
+             0 -2.5953776995672833  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf5.dae</uri>
+            <scale> 0.5801459386955711 0.5801459386955711 0.5801459386955711</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_3_2 >
+      <pose> -0.07460342309063744
+             -0.03730572846345173
+             0.14188639320449514 0
+             0 -1.0853976418198836  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf2.dae</uri>
+            <scale> 0.5801459386955711 0.5801459386955711 0.5801459386955711</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+
+    <joint name=leaf_dirt_joint_3 type="revolute">
+      <parent>dirt_link</parent>
+      <child>leaf_stem_link_3</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <link name= leaf_stem_link_4 >
+      <pose>0 0 0 0 -0.46420695327994876 -2.28196367734275 </pose>
+      <inertial>
+        <mass>1</mass>
+        <inertia> <!-- Modeled as slender rod -->
+          <ixx>1e-3</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.333e-2</iyy>
+          <iyz>0</iyz>
+          <izz>8.333e-2</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf_stem1.stl</uri>
+            <scale> 0.23280769467083007 0.23280769467083007 0.23280769467083007</scale>
+          </mesh>
+        </geometry>
+        <material> <!-- Green -->
+          <ambient>0.0 0.5 0.0 1.0</ambient>
+          <diffuse>0.0 0.5 0.0 1.0</diffuse>
+          <specular>0.1 0.1 0.1 1.0</specular>
+        </material>
+      </visual>
+    </link>
+
+    <link name= leaf_link_4_0 >
+      <pose> -0.08152635363288242
+             -0.09462638475577893
+             0.06253873313905711 0
+             0 -3.789925451054809  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf3.dae</uri>
+            <scale> 0.4366518475921794 0.4366518475921794 0.4366518475921794</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_4_1 >
+      <pose> -0.08152635363288242
+             -0.09462638475577893
+             0.06253873313905711 0
+             0 -2.3035137335041584  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf4.dae</uri>
+            <scale> 0.4366518475921794 0.4366518475921794 0.4366518475921794</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_4_2 >
+      <pose> -0.08152635363288242
+             -0.09462638475577893
+             0.06253873313905711 0
+             0 -0.7878083117757653  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf2.dae</uri>
+            <scale> 0.4366518475921794 0.4366518475921794 0.4366518475921794</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+
+    <joint name=leaf_dirt_joint_4 type="revolute">
+      <parent>dirt_link</parent>
+      <child>leaf_stem_link_4</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <link name= leaf_stem_link_5 >
+      <pose>0 0 0 0 -0.37643924628310255 1.2055099561059937 </pose>
+      <inertial>
+        <mass>1</mass>
+        <inertia> <!-- Modeled as slender rod -->
+          <ixx>1e-3</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.333e-2</iyy>
+          <iyz>0</iyz>
+          <izz>8.333e-2</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf_stem1.stl</uri>
+            <scale> 0.25405463398241596 0.25405463398241596 0.25405463398241596</scale>
+          </mesh>
+        </geometry>
+        <material> <!-- Green -->
+          <ambient>0.0 0.5 0.0 1.0</ambient>
+          <diffuse>0.0 0.5 0.0 1.0</diffuse>
+          <specular>0.1 0.1 0.1 1.0</specular>
+        </material>
+      </visual>
+    </link>
+
+    <link name= leaf_link_5_0 >
+      <pose> 0.050638823319686214
+             0.13240629161133605
+             0.05603602458945142 0
+             0 -0.3626265739888497  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf1.dae</uri>
+            <scale> 0.4690198996188877 0.4690198996188877 0.4690198996188877</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_5_1 >
+      <pose> 0.050638823319686214
+             0.13240629161133605
+             0.05603602458945142 0
+             0 1.2237252589808445  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf3.dae</uri>
+            <scale> 0.4690198996188877 0.4690198996188877 0.4690198996188877</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_5_2 >
+      <pose> 0.050638823319686214
+             0.13240629161133605
+             0.05603602458945142 0
+             0 2.8601872049195345  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf1.dae</uri>
+            <scale> 0.4690198996188877 0.4690198996188877 0.4690198996188877</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+
+    <joint name=leaf_dirt_joint_5 type="revolute">
+      <parent>dirt_link</parent>
+      <child>leaf_stem_link_5</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <link name= leaf_stem_link_6 >
+      <pose>0 0 0 0 -1.0216407595907766 -2.2824398100005494 </pose>
+      <inertial>
+        <mass>1</mass>
+        <inertia> <!-- Modeled as slender rod -->
+          <ixx>1e-3</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.333e-2</iyy>
+          <iyz>0</iyz>
+          <izz>8.333e-2</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf_stem2.stl</uri>
+            <scale> 0.362775110937154 0.362775110937154 0.362775110937154</scale>
+          </mesh>
+        </geometry>
+        <material> <!-- Green -->
+          <ambient>0.0 0.5 0.0 1.0</ambient>
+          <diffuse>0.0 0.5 0.0 1.0</diffuse>
+          <specular>0.1 0.1 0.1 1.0</specular>
+        </material>
+      </visual>
+    </link>
+
+    <link name= leaf_link_6_0 >
+      <pose> -0.07419895379890724
+             -0.08603870749665485
+             0.18566081242152277 0
+             0 -3.7939485069391656  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf5.dae</uri>
+            <scale> 0.47767515597498 0.47767515597498 0.47767515597498</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_6_1 >
+      <pose> -0.07419895379890724
+             -0.08603870749665485
+             0.18566081242152277 0
+             0 -2.286865852381076  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf2.dae</uri>
+            <scale> 0.47767515597498 0.47767515597498 0.47767515597498</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_6_2 >
+      <pose> -0.07419895379890724
+             -0.08603870749665485
+             0.18566081242152277 0
+             0 -0.8319299501315454  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf3.dae</uri>
+            <scale> 0.47767515597498 0.47767515597498 0.47767515597498</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+
+    <joint name=leaf_dirt_joint_6 type="revolute">
+      <parent>dirt_link</parent>
+      <child>leaf_stem_link_6</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <link name= leaf_stem_link_7 >
+      <pose>0 0 0 0 -1.2227371753514897 -1.9051321969777182 </pose>
+      <inertial>
+        <mass>1</mass>
+        <inertia> <!-- Modeled as slender rod -->
+          <ixx>1e-3</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.333e-2</iyy>
+          <iyz>0</iyz>
+          <izz>8.333e-2</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf_stem2.stl</uri>
+            <scale> 0.3335359324976635 0.3335359324976635 0.3335359324976635</scale>
+          </mesh>
+        </geometry>
+        <material> <!-- Green -->
+          <ambient>0.0 0.5 0.0 1.0</ambient>
+          <diffuse>0.0 0.5 0.0 1.0</diffuse>
+          <specular>0.1 0.1 0.1 1.0</specular>
+        </material>
+      </visual>
+    </link>
+
+    <link name= leaf_link_7_0 >
+      <pose> -0.022397737027446348
+             -0.06447680231586839
+             0.18812156153753543 0
+             0 -3.5232975597671765  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf5.dae</uri>
+            <scale> 0.5998558447683011 0.5998558447683011 0.5998558447683011</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_7_1 >
+      <pose> -0.022397737027446348
+             -0.06447680231586839
+             0.18812156153753543 0
+             0 -1.913176831860613  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf1.dae</uri>
+            <scale> 0.5998558447683011 0.5998558447683011 0.5998558447683011</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_7_2 >
+      <pose> -0.022397737027446348
+             -0.06447680231586839
+             0.18812156153753543 0
+             0 -0.2538505497264407  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf4.dae</uri>
+            <scale> 0.5998558447683011 0.5998558447683011 0.5998558447683011</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+
+    <joint name=leaf_dirt_joint_7 type="revolute">
+      <parent>dirt_link</parent>
+      <child>leaf_stem_link_7</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <link name= leaf_stem_link_8 >
+      <pose>0 0 0 0 -0.38769324135844474 -0.18005252716778397 </pose>
+      <inertial>
+        <mass>1</mass>
+        <inertia> <!-- Modeled as slender rod -->
+          <ixx>1e-3</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.333e-2</iyy>
+          <iyz>0</iyz>
+          <izz>8.333e-2</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf_stem1.stl</uri>
+            <scale> 0.3200097737933706 0.3200097737933706 0.3200097737933706</scale>
+          </mesh>
+        </geometry>
+        <material> <!-- Green -->
+          <ambient>0.0 0.5 0.0 1.0</ambient>
+          <diffuse>0.0 0.5 0.0 1.0</diffuse>
+          <specular>0.1 0.1 0.1 1.0</specular>
+        </material>
+      </visual>
+    </link>
+
+    <link name= leaf_link_8_0 >
+      <pose> 0.17488233002628306
+             -0.031832745574167896
+             0.07258855881039948 0
+             0 -1.667340641445143  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf4.dae</uri>
+            <scale> 0.7171106793161139 0.7171106793161139 0.7171106793161139</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_8_1 >
+      <pose> 0.17488233002628306
+             -0.031832745574167896
+             0.07258855881039948 0
+             0 -0.15231764542173773  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf1.dae</uri>
+            <scale> 0.7171106793161139 0.7171106793161139 0.7171106793161139</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_8_2 >
+      <pose> 0.17488233002628306
+             -0.031832745574167896
+             0.07258855881039948 0
+             0 1.330655750898196  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf5.dae</uri>
+            <scale> 0.7171106793161139 0.7171106793161139 0.7171106793161139</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+
+    <joint name=leaf_dirt_joint_8 type="revolute">
+      <parent>dirt_link</parent>
+      <child>leaf_stem_link_8</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <link name= leaf_stem_link_9 >
+      <pose>0 0 0 0 -0.7354199333681247 0.4534142204889151 </pose>
+      <inertial>
+        <mass>1</mass>
+        <inertia> <!-- Modeled as slender rod -->
+          <ixx>1e-3</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.333e-2</iyy>
+          <iyz>0</iyz>
+          <izz>8.333e-2</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf_stem1.stl</uri>
+            <scale> 0.31698713538661266 0.31698713538661266 0.31698713538661266</scale>
+          </mesh>
+        </geometry>
+        <material> <!-- Green -->
+          <ambient>0.0 0.5 0.0 1.0</ambient>
+          <diffuse>0.0 0.5 0.0 1.0</diffuse>
+          <specular>0.1 0.1 0.1 1.0</specular>
+        </material>
+      </visual>
+    </link>
+
+    <link name= leaf_link_9_0 >
+      <pose> 0.1267860898065998
+             0.06177943080219642
+             0.12759973825023815 0
+             0 -1.089940282872767  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf5.dae</uri>
+            <scale> 0.5020224213983231 0.5020224213983231 0.5020224213983231</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_9_1 >
+      <pose> 0.1267860898065998
+             0.06177943080219642
+             0.12759973825023815 0
+             0 0.47494639756971946  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf2.dae</uri>
+            <scale> 0.5020224213983231 0.5020224213983231 0.5020224213983231</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_9_2 >
+      <pose> 0.1267860898065998
+             0.06177943080219642
+             0.12759973825023815 0
+             0 2.101611275965151  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf3.dae</uri>
+            <scale> 0.5020224213983231 0.5020224213983231 0.5020224213983231</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+
+    <joint name=leaf_dirt_joint_9 type="revolute">
+      <parent>dirt_link</parent>
+      <child>leaf_stem_link_9</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <link name= leaf_stem_link_10 >
+      <pose>0 0 0 0 -0.394618256739922 1.0278743122747525 </pose>
+      <inertial>
+        <mass>1</mass>
+        <inertia> <!-- Modeled as slender rod -->
+          <ixx>1e-3</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.333e-2</iyy>
+          <iyz>0</iyz>
+          <izz>8.333e-2</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf_stem1.stl</uri>
+            <scale> 0.4065600211387111 0.4065600211387111 0.4065600211387111</scale>
+          </mesh>
+        </geometry>
+        <material> <!-- Green -->
+          <ambient>0.0 0.5 0.0 1.0</ambient>
+          <diffuse>0.0 0.5 0.0 1.0</diffuse>
+          <specular>0.1 0.1 0.1 1.0</specular>
+        </material>
+      </visual>
+    </link>
+
+    <link name= leaf_link_10_0 >
+      <pose> 0.11634109328121127
+             0.1928065062230535
+             0.09378261809089918 0
+             0 -0.4386391081196477  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf5.dae</uri>
+            <scale> 0.4941399830798881 0.4941399830798881 0.4941399830798881</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_10_1 >
+      <pose> 0.11634109328121127
+             0.1928065062230535
+             0.09378261809089918 0
+             0 1.1847642396226457  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf3.dae</uri>
+            <scale> 0.4941399830798881 0.4941399830798881 0.4941399830798881</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_10_2 >
+      <pose> 0.11634109328121127
+             0.1928065062230535
+             0.09378261809089918 0
+             0 2.51677835289674  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf2.dae</uri>
+            <scale> 0.4941399830798881 0.4941399830798881 0.4941399830798881</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+
+    <joint name=leaf_dirt_joint_10 type="revolute">
+      <parent>dirt_link</parent>
+      <child>leaf_stem_link_10</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <link name= leaf_stem_link_11 >
+      <pose>0 0 0 0 -1.117831076160274 2.268926818552851 </pose>
+      <inertial>
+        <mass>1</mass>
+        <inertia> <!-- Modeled as slender rod -->
+          <ixx>1e-3</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.333e-2</iyy>
+          <iyz>0</iyz>
+          <izz>8.333e-2</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf_stem2.stl</uri>
+            <scale> 0.26729437676012713 0.26729437676012713 0.26729437676012713</scale>
+          </mesh>
+        </geometry>
+        <material> <!-- Green -->
+          <ambient>0.0 0.5 0.0 1.0</ambient>
+          <diffuse>0.0 0.5 0.0 1.0</diffuse>
+          <specular>0.1 0.1 0.1 1.0</specular>
+        </material>
+      </visual>
+    </link>
+
+    <link name= leaf_link_11_0 >
+      <pose> -0.04511476200711891
+             0.05376581171650685
+             0.14420318278261643 0
+             0 0.757595677352858  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf3.dae</uri>
+            <scale> 0.7228486748046261 0.7228486748046261 0.7228486748046261</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_11_1 >
+      <pose> -0.04511476200711891
+             0.05376581171650685
+             0.14420318278261643 0
+             0 2.4055972301416393  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf2.dae</uri>
+            <scale> 0.7228486748046261 0.7228486748046261 0.7228486748046261</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_11_2 >
+      <pose> -0.04511476200711891
+             0.05376581171650685
+             0.14420318278261643 0
+             0 3.9564780334366265  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf5.dae</uri>
+            <scale> 0.7228486748046261 0.7228486748046261 0.7228486748046261</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+
+    <joint name=leaf_dirt_joint_11 type="revolute">
+      <parent>dirt_link</parent>
+      <child>leaf_stem_link_11</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <link name= leaf_stem_link_12 >
+      <pose>0 0 0 0 -0.8726846376447619 1.47613160153419 </pose>
+      <inertial>
+        <mass>1</mass>
+        <inertia> <!-- Modeled as slender rod -->
+          <ixx>1e-3</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.333e-2</iyy>
+          <iyz>0</iyz>
+          <izz>8.333e-2</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf_stem2.stl</uri>
+            <scale> 0.16334635047007887 0.16334635047007887 0.16334635047007887</scale>
+          </mesh>
+        </geometry>
+        <material> <!-- Green -->
+          <ambient>0.0 0.5 0.0 1.0</ambient>
+          <diffuse>0.0 0.5 0.0 1.0</diffuse>
+          <specular>0.1 0.1 0.1 1.0</specular>
+        </material>
+      </visual>
+    </link>
+
+    <link name= leaf_link_12_0 >
+      <pose> 0.005954662640266397
+             0.06271464472790582
+             0.0750795991316879 0
+             0 -0.12564635727964402  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf3.dae</uri>
+            <scale> 0.5684788069274053 0.5684788069274053 0.5684788069274053</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_12_1 >
+      <pose> 0.005954662640266397
+             0.06271464472790582
+             0.0750795991316879 0
+             0 1.46532695935545  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf3.dae</uri>
+            <scale> 0.5684788069274053 0.5684788069274053 0.5684788069274053</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_12_2 >
+      <pose> 0.005954662640266397
+             0.06271464472790582
+             0.0750795991316879 0
+             0 2.8718114216282236  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf5.dae</uri>
+            <scale> 0.5684788069274053 0.5684788069274053 0.5684788069274053</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+
+    <joint name=leaf_dirt_joint_12 type="revolute">
+      <parent>dirt_link</parent>
+      <child>leaf_stem_link_12</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <link name= leaf_stem_link_13 >
+      <pose>0 0 0 0 -0.5261161265934775 -2.960233146132748 </pose>
+      <inertial>
+        <mass>1</mass>
+        <inertia> <!-- Modeled as slender rod -->
+          <ixx>1e-3</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.333e-2</iyy>
+          <iyz>0</iyz>
+          <izz>8.333e-2</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf_stem1.stl</uri>
+            <scale> 0.3252864860857564 0.3252864860857564 0.3252864860857564</scale>
+          </mesh>
+        </geometry>
+        <material> <!-- Green -->
+          <ambient>0.0 0.5 0.0 1.0</ambient>
+          <diffuse>0.0 0.5 0.0 1.0</diffuse>
+          <specular>0.1 0.1 0.1 1.0</specular>
+        </material>
+      </visual>
+    </link>
+
+    <link name= leaf_link_13_0 >
+      <pose> -0.16600956720411034
+             -0.03044190513893005
+             0.09801112844480056 0
+             0 -4.647246580479745  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf5.dae</uri>
+            <scale> 0.5382580952361161 0.5382580952361161 0.5382580952361161</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_13_1 >
+      <pose> -0.16600956720411034
+             -0.03044190513893005
+             0.09801112844480056 0
+             0 -2.782905643075611  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf1.dae</uri>
+            <scale> 0.5382580952361161 0.5382580952361161 0.5382580952361161</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_13_2 >
+      <pose> -0.16600956720411034
+             -0.03044190513893005
+             0.09801112844480056 0
+             0 -1.2550405216978104  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf3.dae</uri>
+            <scale> 0.5382580952361161 0.5382580952361161 0.5382580952361161</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+
+    <joint name=leaf_dirt_joint_13 type="revolute">
+      <parent>dirt_link</parent>
+      <child>leaf_stem_link_13</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <link name= leaf_stem_link_14 >
+      <pose>0 0 0 0 -0.5487353089836665 2.102054624385688 </pose>
+      <inertial>
+        <mass>1</mass>
+        <inertia> <!-- Modeled as slender rod -->
+          <ixx>1e-3</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.333e-2</iyy>
+          <iyz>0</iyz>
+          <izz>8.333e-2</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf_stem1.stl</uri>
+            <scale> 0.26047869428542925 0.26047869428542925 0.26047869428542925</scale>
+          </mesh>
+        </geometry>
+        <material> <!-- Green -->
+          <ambient>0.0 0.5 0.0 1.0</ambient>
+          <diffuse>0.0 0.5 0.0 1.0</diffuse>
+          <specular>0.1 0.1 0.1 1.0</specular>
+        </material>
+      </visual>
+    </link>
+
+    <link name= leaf_link_14_0 >
+      <pose> -0.06755348269817829
+             0.11496341395993226
+             0.08152076109565796 0
+             0 0.5595568786543692  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf1.dae</uri>
+            <scale> 0.6068511107148477 0.6068511107148477 0.6068511107148477</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_14_1 >
+      <pose> -0.06755348269817829
+             0.11496341395993226
+             0.08152076109565796 0
+             0 2.160521347269378  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf5.dae</uri>
+            <scale> 0.6068511107148477 0.6068511107148477 0.6068511107148477</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_14_2 >
+      <pose> -0.06755348269817829
+             0.11496341395993226
+             0.08152076109565796 0
+             0 3.5815155746013345  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf1.dae</uri>
+            <scale> 0.6068511107148477 0.6068511107148477 0.6068511107148477</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+
+    <joint name=leaf_dirt_joint_14 type="revolute">
+      <parent>dirt_link</parent>
+      <child>leaf_stem_link_14</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <link name= leaf_stem_link_15 >
+      <pose>0 0 0 0 -0.7112865723768801 -2.9827090178856936 </pose>
+      <inertial>
+        <mass>1</mass>
+        <inertia> <!-- Modeled as slender rod -->
+          <ixx>1e-3</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.333e-2</iyy>
+          <iyz>0</iyz>
+          <izz>8.333e-2</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf_stem1.stl</uri>
+            <scale> 0.24641278693867205 0.24641278693867205 0.24641278693867205</scale>
+          </mesh>
+        </geometry>
+        <material> <!-- Green -->
+          <ambient>0.0 0.5 0.0 1.0</ambient>
+          <diffuse>0.0 0.5 0.0 1.0</diffuse>
+          <specular>0.1 0.1 0.1 1.0</specular>
+        </material>
+      </visual>
+    </link>
+
+    <link name= leaf_link_15_0 >
+      <pose> -0.11058728815809955
+             -0.017719868793558736
+             0.09651627899921615 0
+             0 -4.552914904736364  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf2.dae</uri>
+            <scale> 0.7082040546667057 0.7082040546667057 0.7082040546667057</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_15_1 >
+      <pose> -0.11058728815809955
+             -0.017719868793558736
+             0.09651627899921615 0
+             0 -3.0157213679527177  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf3.dae</uri>
+            <scale> 0.7082040546667057 0.7082040546667057 0.7082040546667057</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_15_2 >
+      <pose> -0.11058728815809955
+             -0.017719868793558736
+             0.09651627899921615 0
+             0 -1.2550756107454115  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf5.dae</uri>
+            <scale> 0.7082040546667057 0.7082040546667057 0.7082040546667057</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+
+    <joint name=leaf_dirt_joint_15 type="revolute">
+      <parent>dirt_link</parent>
+      <child>leaf_stem_link_15</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <link name= leaf_stem_link_16 >
+      <pose>0 0 0 0 -0.5460140434358293 0.6994011694329707 </pose>
+      <inertial>
+        <mass>1</mass>
+        <inertia> <!-- Modeled as slender rod -->
+          <ixx>1e-3</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.333e-2</iyy>
+          <iyz>0</iyz>
+          <izz>8.333e-2</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf_stem1.stl</uri>
+            <scale> 0.38657287934209944 0.38657287934209944 0.38657287934209944</scale>
+          </mesh>
+        </geometry>
+        <material> <!-- Green -->
+          <ambient>0.0 0.5 0.0 1.0</ambient>
+          <diffuse>0.0 0.5 0.0 1.0</diffuse>
+          <specular>0.1 0.1 0.1 1.0</specular>
+        </material>
+      </visual>
+    </link>
+
+    <link name= leaf_link_16_0 >
+      <pose> 0.15168298319270457
+             0.1276056190851741
+             0.12044488931903277 0
+             0 -0.7991636536084148  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf4.dae</uri>
+            <scale> 0.6563259497709697 0.6563259497709697 0.6563259497709697</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_16_1 >
+      <pose> 0.15168298319270457
+             0.1276056190851741
+             0.12044488931903277 0
+             0 0.7768426957351511  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf5.dae</uri>
+            <scale> 0.6563259497709697 0.6563259497709697 0.6563259497709697</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_16_2 >
+      <pose> 0.15168298319270457
+             0.1276056190851741
+             0.12044488931903277 0
+             0 2.18371267204407  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf4.dae</uri>
+            <scale> 0.6563259497709697 0.6563259497709697 0.6563259497709697</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+
+    <joint name=leaf_dirt_joint_16 type="revolute">
+      <parent>dirt_link</parent>
+      <child>leaf_stem_link_16</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <link name= leaf_stem_link_17 >
+      <pose>0 0 0 0 -0.5104691490676966 1.2348254402376284 </pose>
+      <inertial>
+        <mass>1</mass>
+        <inertia> <!-- Modeled as slender rod -->
+          <ixx>1e-3</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.333e-2</iyy>
+          <iyz>0</iyz>
+          <izz>8.333e-2</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf_stem1.stl</uri>
+            <scale> 0.2105599292738583 0.2105599292738583 0.2105599292738583</scale>
+          </mesh>
+        </geometry>
+        <material> <!-- Green -->
+          <ambient>0.0 0.5 0.0 1.0</ambient>
+          <diffuse>0.0 0.5 0.0 1.0</diffuse>
+          <specular>0.1 0.1 0.1 1.0</specular>
+        </material>
+      </visual>
+    </link>
+
+    <link name= leaf_link_17_0 >
+      <pose> 0.03634130199053274
+             0.1040671769968761
+             0.0617260610700712 0
+             0 -0.32456355283813365  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf1.dae</uri>
+            <scale> 0.41870894969459804 0.41870894969459804 0.41870894969459804</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_17_1 >
+      <pose> 0.03634130199053274
+             0.1040671769968761
+             0.0617260610700712 0
+             0 1.044983925646883  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf2.dae</uri>
+            <scale> 0.41870894969459804 0.41870894969459804 0.41870894969459804</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_17_2 >
+      <pose> 0.03634130199053274
+             0.1040671769968761
+             0.0617260610700712 0
+             0 2.820741841719972  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf1.dae</uri>
+            <scale> 0.41870894969459804 0.41870894969459804 0.41870894969459804</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+
+    <joint name=leaf_dirt_joint_17 type="revolute">
+      <parent>dirt_link</parent>
+      <child>leaf_stem_link_17</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <link name= leaf_stem_link_18 >
+      <pose>0 0 0 0 -1.167519360747338 -2.9869655358456844 </pose>
+      <inertial>
+        <mass>1</mass>
+        <inertia> <!-- Modeled as slender rod -->
+          <ixx>1e-3</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.333e-2</iyy>
+          <iyz>0</iyz>
+          <izz>8.333e-2</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf_stem2.stl</uri>
+            <scale> 0.29552406639756257 0.29552406639756257 0.29552406639756257</scale>
+          </mesh>
+        </geometry>
+        <material> <!-- Green -->
+          <ambient>0.0 0.5 0.0 1.0</ambient>
+          <diffuse>0.0 0.5 0.0 1.0</diffuse>
+          <specular>0.1 0.1 0.1 1.0</specular>
+        </material>
+      </visual>
+    </link>
+
+    <link name= leaf_link_18_0 >
+      <pose> -0.0687541006829222
+             -0.010716796116981184
+             0.1630902648704821 0
+             0 -4.500471721235821  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf4.dae</uri>
+            <scale> 0.5569197547671455 0.5569197547671455 0.5569197547671455</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_18_1 >
+      <pose> -0.0687541006829222
+             -0.010716796116981184
+             0.1630902648704821 0
+             0 -3.0136403311240314  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf5.dae</uri>
+            <scale> 0.5569197547671455 0.5569197547671455 0.5569197547671455</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_18_2 >
+      <pose> -0.0687541006829222
+             -0.010716796116981184
+             0.1630902648704821 0
+             0 -1.3972379867393703  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf1.dae</uri>
+            <scale> 0.5569197547671455 0.5569197547671455 0.5569197547671455</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+
+    <joint name=leaf_dirt_joint_18 type="revolute">
+      <parent>dirt_link</parent>
+      <child>leaf_stem_link_18</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <link name= leaf_stem_link_19 >
+      <pose>0 0 0 0 -0.8389109594634686 -1.9594533094263793 </pose>
+      <inertial>
+        <mass>1</mass>
+        <inertia> <!-- Modeled as slender rod -->
+          <ixx>1e-3</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.333e-2</iyy>
+          <iyz>0</iyz>
+          <izz>8.333e-2</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf_stem2.stl</uri>
+            <scale> 0.3738709586111726 0.3738709586111726 0.3738709586111726</scale>
+          </mesh>
+        </geometry>
+        <material> <!-- Green -->
+          <ambient>0.0 0.5 0.0 1.0</ambient>
+          <diffuse>0.0 0.5 0.0 1.0</diffuse>
+          <specular>0.1 0.1 0.1 1.0</specular>
+        </material>
+      </visual>
+    </link>
+
+    <link name= leaf_link_19_0 >
+      <pose> -0.056807327473424554
+             -0.13872842994772897
+             0.16687710447807547 0
+             0 -3.5898860560205677  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf1.dae</uri>
+            <scale> 0.5905531719589753 0.5905531719589753 0.5905531719589753</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_19_1 >
+      <pose> -0.056807327473424554
+             -0.13872842994772897
+             0.16687710447807547 0
+             0 -1.8970565128292254  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf3.dae</uri>
+            <scale> 0.5905531719589753 0.5905531719589753 0.5905531719589753</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_19_2 >
+      <pose> -0.056807327473424554
+             -0.13872842994772897
+             0.16687710447807547 0
+             0 -0.3826410774567708  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf5.dae</uri>
+            <scale> 0.5905531719589753 0.5905531719589753 0.5905531719589753</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+
+    <joint name=leaf_dirt_joint_19 type="revolute">
+      <parent>dirt_link</parent>
+      <child>leaf_stem_link_19</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <link name= leaf_stem_link_20 >
+      <pose>0 0 0 0 -0.635464316344708 1.8676278529914097 </pose>
+      <inertial>
+        <mass>1</mass>
+        <inertia> <!-- Modeled as slender rod -->
+          <ixx>1e-3</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.333e-2</iyy>
+          <iyz>0</iyz>
+          <izz>8.333e-2</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf_stem1.stl</uri>
+            <scale> 0.21905291672280525 0.21905291672280525 0.21905291672280525</scale>
+          </mesh>
+        </geometry>
+        <material> <!-- Green -->
+          <ambient>0.0 0.5 0.0 1.0</ambient>
+          <diffuse>0.0 0.5 0.0 1.0</diffuse>
+          <specular>0.1 0.1 0.1 1.0</specular>
+        </material>
+      </visual>
+    </link>
+
+    <link name= leaf_link_20_0 >
+      <pose> -0.030938542557829782
+             0.10114998958419213
+             0.07801148061940466 0
+             0 0.1504281406542387  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf4.dae</uri>
+            <scale> 0.655545274766764 0.655545274766764 0.655545274766764</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_20_1 >
+      <pose> -0.030938542557829782
+             0.10114998958419213
+             0.07801148061940466 0
+             0 2.093596967422847  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf3.dae</uri>
+            <scale> 0.655545274766764 0.655545274766764 0.655545274766764</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_20_2 >
+      <pose> -0.030938542557829782
+             0.10114998958419213
+             0.07801148061940466 0
+             0 3.3501788907739  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf2.dae</uri>
+            <scale> 0.655545274766764 0.655545274766764 0.655545274766764</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+
+    <joint name=leaf_dirt_joint_20 type="revolute">
+      <parent>dirt_link</parent>
+      <child>leaf_stem_link_20</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <link name= leaf_stem_link_21 >
+      <pose>0 0 0 0 -1.025069351163312 -1.0071428261815898 </pose>
+      <inertial>
+        <mass>1</mass>
+        <inertia> <!-- Modeled as slender rod -->
+          <ixx>1e-3</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.333e-2</iyy>
+          <iyz>0</iyz>
+          <izz>8.333e-2</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf_stem2.stl</uri>
+            <scale> 0.12353984599692083 0.12353984599692083 0.12353984599692083</scale>
+          </mesh>
+        </geometry>
+        <material> <!-- Green -->
+          <ambient>0.0 0.5 0.0 1.0</ambient>
+          <diffuse>0.0 0.5 0.0 1.0</diffuse>
+          <specular>0.1 0.1 0.1 1.0</specular>
+        </material>
+      </visual>
+    </link>
+
+    <link name= leaf_link_21_0 >
+      <pose> 0.020555411489238125
+             -0.032521770713611786
+             0.06335742392000175 0
+             0 -2.593516949533544  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf4.dae</uri>
+            <scale> 0.6134127294318676 0.6134127294318676 0.6134127294318676</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_21_1 >
+      <pose> 0.020555411489238125
+             -0.032521770713611786
+             0.06335742392000175 0
+             0 -0.8961881355378498  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf4.dae</uri>
+            <scale> 0.6134127294318676 0.6134127294318676 0.6134127294318676</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_21_2 >
+      <pose> 0.020555411489238125
+             -0.032521770713611786
+             0.06335742392000175 0
+             0 0.6149565506581118  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf3.dae</uri>
+            <scale> 0.6134127294318676 0.6134127294318676 0.6134127294318676</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+
+    <joint name=leaf_dirt_joint_21 type="revolute">
+      <parent>dirt_link</parent>
+      <child>leaf_stem_link_21</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <link name= leaf_stem_link_22 >
+      <pose>0 0 0 0 -1.1365672929714685 0.829647339773758 </pose>
+      <inertial>
+        <mass>1</mass>
+        <inertia> <!-- Modeled as slender rod -->
+          <ixx>1e-3</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.333e-2</iyy>
+          <iyz>0</iyz>
+          <izz>8.333e-2</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf_stem2.stl</uri>
+            <scale> 0.1974988589368426 0.1974988589368426 0.1974988589368426</scale>
+          </mesh>
+        </geometry>
+        <material> <!-- Green -->
+          <ambient>0.0 0.5 0.0 1.0</ambient>
+          <diffuse>0.0 0.5 0.0 1.0</diffuse>
+          <specular>0.1 0.1 0.1 1.0</specular>
+        </material>
+      </visual>
+    </link>
+
+    <link name= leaf_link_22_0 >
+      <pose> 0.03365821349742889
+             0.03677694708974774
+             0.10750194681124216 0
+             0 -0.690438671202396  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf4.dae</uri>
+            <scale> 0.6480051319628481 0.6480051319628481 0.6480051319628481</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_22_1 >
+      <pose> 0.03365821349742889
+             0.03677694708974774
+             0.10750194681124216 0
+             0 0.930391121882234  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf3.dae</uri>
+            <scale> 0.6480051319628481 0.6480051319628481 0.6480051319628481</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_22_2 >
+      <pose> 0.03365821349742889
+             0.03677694708974774
+             0.10750194681124216 0
+             0 2.156553249928237  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf3.dae</uri>
+            <scale> 0.6480051319628481 0.6480051319628481 0.6480051319628481</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+
+    <joint name=leaf_dirt_joint_22 type="revolute">
+      <parent>dirt_link</parent>
+      <child>leaf_stem_link_22</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <link name= leaf_stem_link_23 >
+      <pose>0 0 0 0 -1.2871177173958908 -2.9036830023674627 </pose>
+      <inertial>
+        <mass>1</mass>
+        <inertia> <!-- Modeled as slender rod -->
+          <ixx>1e-3</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.333e-2</iyy>
+          <iyz>0</iyz>
+          <izz>8.333e-2</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf_stem2.stl</uri>
+            <scale> 0.2968439058521314 0.2968439058521314 0.2968439058521314</scale>
+          </mesh>
+        </geometry>
+        <material> <!-- Green -->
+          <ambient>0.0 0.5 0.0 1.0</ambient>
+          <diffuse>0.0 0.5 0.0 1.0</diffuse>
+          <specular>0.1 0.1 0.1 1.0</specular>
+        </material>
+      </visual>
+    </link>
+
+    <link name= leaf_link_23_0 >
+      <pose> -0.04844588845483474
+             -0.011748239390090212
+             0.1709878485799868 0
+             0 -4.5062985142217915  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf3.dae</uri>
+            <scale> 0.5313726901781283 0.5313726901781283 0.5313726901781283</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_23_1 >
+      <pose> -0.04844588845483474
+             -0.011748239390090212
+             0.1709878485799868 0
+             0 -2.8684395310731086  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf4.dae</uri>
+            <scale> 0.5313726901781283 0.5313726901781283 0.5313726901781283</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_23_2 >
+      <pose> -0.04844588845483474
+             -0.011748239390090212
+             0.1709878485799868 0
+             0 -1.3332217322904643  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf2.dae</uri>
+            <scale> 0.5313726901781283 0.5313726901781283 0.5313726901781283</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+
+    <joint name=leaf_dirt_joint_23 type="revolute">
+      <parent>dirt_link</parent>
+      <child>leaf_stem_link_23</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <link name= leaf_stem_link_24 >
+      <pose>0 0 0 0 -1.0059120763175853 -0.39944292393390723 </pose>
+      <inertial>
+        <mass>1</mass>
+        <inertia> <!-- Modeled as slender rod -->
+          <ixx>1e-3</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.333e-2</iyy>
+          <iyz>0</iyz>
+          <izz>8.333e-2</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf_stem2.stl</uri>
+            <scale> 0.35626742686043605 0.35626742686043605 0.35626742686043605</scale>
+          </mesh>
+        </geometry>
+        <material> <!-- Green -->
+          <ambient>0.0 0.5 0.0 1.0</ambient>
+          <diffuse>0.0 0.5 0.0 1.0</diffuse>
+          <specular>0.1 0.1 0.1 1.0</specular>
+        </material>
+      </visual>
+    </link>
+
+    <link name= leaf_link_24_0 >
+      <pose> 0.10542166134358116
+             -0.04450235408293672
+             0.18055289086488874 0
+             0 -1.8811777080329517  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf4.dae</uri>
+            <scale> 0.4572725153197308 0.4572725153197308 0.4572725153197308</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_24_1 >
+      <pose> 0.10542166134358116
+             -0.04450235408293672
+             0.18055289086488874 0
+             0 -0.5998452415127872  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf4.dae</uri>
+            <scale> 0.4572725153197308 0.4572725153197308 0.4572725153197308</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_24_2 >
+      <pose> 0.10542166134358116
+             -0.04450235408293672
+             0.18055289086488874 0
+             0 0.9528617922239548  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf3.dae</uri>
+            <scale> 0.4572725153197308 0.4572725153197308 0.4572725153197308</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+
+    <joint name=leaf_dirt_joint_24 type="revolute">
+      <parent>dirt_link</parent>
+      <child>leaf_stem_link_24</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <link name= leaf_stem_link_25 >
+      <pose>0 0 0 0 -1.0495724800716584 0.46464619130896656 </pose>
+      <inertial>
+        <mass>1</mass>
+        <inertia> <!-- Modeled as slender rod -->
+          <ixx>1e-3</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.333e-2</iyy>
+          <iyz>0</iyz>
+          <izz>8.333e-2</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf_stem2.stl</uri>
+            <scale> 0.35396738838601577 0.35396738838601577 0.35396738838601577</scale>
+          </mesh>
+        </geometry>
+        <material> <!-- Green -->
+          <ambient>0.0 0.5 0.0 1.0</ambient>
+          <diffuse>0.0 0.5 0.0 1.0</diffuse>
+          <specular>0.1 0.1 0.1 1.0</specular>
+        </material>
+      </visual>
+    </link>
+
+    <link name= leaf_link_25_0 >
+      <pose> 0.09454117765959767
+             0.04738865675356763
+             0.18417852554660893 0
+             0 -1.120268929371184  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf2.dae</uri>
+            <scale> 0.5071386293209518 0.5071386293209518 0.5071386293209518</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_25_1 >
+      <pose> 0.09454117765959767
+             0.04738865675356763
+             0.18417852554660893 0
+             0 0.37949319606168763  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf1.dae</uri>
+            <scale> 0.5071386293209518 0.5071386293209518 0.5071386293209518</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_25_2 >
+      <pose> 0.09454117765959767
+             0.04738865675356763
+             0.18417852554660893 0
+             0 2.0971321394172238  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf4.dae</uri>
+            <scale> 0.5071386293209518 0.5071386293209518 0.5071386293209518</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+
+    <joint name=leaf_dirt_joint_25 type="revolute">
+      <parent>dirt_link</parent>
+      <child>leaf_stem_link_25</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <link name= leaf_stem_link_26 >
+      <pose>0 0 0 0 -1.1337764039340645 -0.8764100739066802 </pose>
+      <inertial>
+        <mass>1</mass>
+        <inertia> <!-- Modeled as slender rod -->
+          <ixx>1e-3</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.333e-2</iyy>
+          <iyz>0</iyz>
+          <izz>8.333e-2</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf_stem2.stl</uri>
+            <scale> 0.28891268501925105 0.28891268501925105 0.28891268501925105</scale>
+          </mesh>
+        </geometry>
+        <material> <!-- Green -->
+          <ambient>0.0 0.5 0.0 1.0</ambient>
+          <diffuse>0.0 0.5 0.0 1.0</diffuse>
+          <specular>0.1 0.1 0.1 1.0</specular>
+        </material>
+      </visual>
+    </link>
+
+    <link name= leaf_link_26_0 >
+      <pose> 0.04694912608699553
+             -0.05637929468377049
+             0.15705587838103938 0
+             0 -2.4648750881423194  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf3.dae</uri>
+            <scale> 0.3997824995919248 0.3997824995919248 0.3997824995919248</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_26_1 >
+      <pose> 0.04694912608699553
+             -0.05637929468377049
+             0.15705587838103938 0
+             0 -0.6786249876908625  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf4.dae</uri>
+            <scale> 0.3997824995919248 0.3997824995919248 0.3997824995919248</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_26_2 >
+      <pose> 0.04694912608699553
+             -0.05637929468377049
+             0.15705587838103938 0
+             0 0.6004600657113157  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf4.dae</uri>
+            <scale> 0.3997824995919248 0.3997824995919248 0.3997824995919248</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+
+    <joint name=leaf_dirt_joint_26 type="revolute">
+      <parent>dirt_link</parent>
+      <child>leaf_stem_link_26</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <link name= leaf_stem_link_27 >
+      <pose>0 0 0 0 -0.3162740350989861 0.6981320364150219 </pose>
+      <inertial>
+        <mass>1</mass>
+        <inertia> <!-- Modeled as slender rod -->
+          <ixx>1e-3</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.333e-2</iyy>
+          <iyz>0</iyz>
+          <izz>8.333e-2</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf_stem1.stl</uri>
+            <scale> 0.42401361464297244 0.42401361464297244 0.42401361464297244</scale>
+          </mesh>
+        </geometry>
+        <material> <!-- Green -->
+          <ambient>0.0 0.5 0.0 1.0</ambient>
+          <diffuse>0.0 0.5 0.0 1.0</diffuse>
+          <specular>0.1 0.1 0.1 1.0</specular>
+        </material>
+      </visual>
+    </link>
+
+    <link name= leaf_link_27_0 >
+      <pose> 0.18522164231860863
+             0.15541951768785664
+             0.07912795386844708 0
+             0 -0.7526923041017815  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf5.dae</uri>
+            <scale> 0.5272786647288211 0.5272786647288211 0.5272786647288211</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_27_1 >
+      <pose> 0.18522164231860863
+             0.15541951768785664
+             0.07912795386844708 0
+             0 0.6483486078798187  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf4.dae</uri>
+            <scale> 0.5272786647288211 0.5272786647288211 0.5272786647288211</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_27_2 >
+      <pose> 0.18522164231860863
+             0.15541951768785664
+             0.07912795386844708 0
+             0 2.2441381018750777  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf3.dae</uri>
+            <scale> 0.5272786647288211 0.5272786647288211 0.5272786647288211</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+
+    <joint name=leaf_dirt_joint_27 type="revolute">
+      <parent>dirt_link</parent>
+      <child>leaf_stem_link_27</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <link name= leaf_stem_link_28 >
+      <pose>0 0 0 0 -1.1279803793995955 -2.5753135653357715 </pose>
+      <inertial>
+        <mass>1</mass>
+        <inertia> <!-- Modeled as slender rod -->
+          <ixx>1e-3</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.333e-2</iyy>
+          <iyz>0</iyz>
+          <izz>8.333e-2</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf_stem2.stl</uri>
+            <scale> 0.2306751585313443 0.2306751585313443 0.2306751585313443</scale>
+          </mesh>
+        </geometry>
+        <material> <!-- Green -->
+          <ambient>0.0 0.5 0.0 1.0</ambient>
+          <diffuse>0.0 0.5 0.0 1.0</diffuse>
+          <specular>0.1 0.1 0.1 1.0</specular>
+        </material>
+      </visual>
+    </link>
+
+    <link name= leaf_link_28_0 >
+      <pose> -0.05004731452131861
+             -0.03181664954698365
+             0.12505573747595325 0
+             0 -4.130585428839539  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf4.dae</uri>
+            <scale> 0.49268644049992705 0.49268644049992705 0.49268644049992705</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_28_1 >
+      <pose> -0.05004731452131861
+             -0.03181664954698365
+             0.12505573747595325 0
+             0 -2.508357021831814  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf4.dae</uri>
+            <scale> 0.49268644049992705 0.49268644049992705 0.49268644049992705</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_28_2 >
+      <pose> -0.05004731452131861
+             -0.03181664954698365
+             0.12505573747595325 0
+             0 -1.022359623756626  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf5.dae</uri>
+            <scale> 0.49268644049992705 0.49268644049992705 0.49268644049992705</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+
+    <joint name=leaf_dirt_joint_28 type="revolute">
+      <parent>dirt_link</parent>
+      <child>leaf_stem_link_28</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <link name= leaf_stem_link_29 >
+      <pose>0 0 0 0 -0.6890145844035995 -1.5205107051044986 </pose>
+      <inertial>
+        <mass>1</mass>
+        <inertia> <!-- Modeled as slender rod -->
+          <ixx>1e-3</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.333e-2</iyy>
+          <iyz>0</iyz>
+          <izz>8.333e-2</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf_stem1.stl</uri>
+            <scale> 0.2586813334827429 0.2586813334827429 0.2586813334827429</scale>
+          </mesh>
+        </geometry>
+        <material> <!-- Green -->
+          <ambient>0.0 0.5 0.0 1.0</ambient>
+          <diffuse>0.0 0.5 0.0 1.0</diffuse>
+          <specular>0.1 0.1 0.1 1.0</specular>
+        </material>
+      </visual>
+    </link>
+
+    <link name= leaf_link_29_0 >
+      <pose> 0.006021752622880983
+             -0.11965003001680759
+             0.0986781659618453 0
+             0 -2.989676940788411  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf1.dae</uri>
+            <scale> 0.6472741048239816 0.6472741048239816 0.6472741048239816</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_29_1 >
+      <pose> 0.006021752622880983
+             -0.11965003001680759
+             0.0986781659618453 0
+             0 -1.5641527104428798  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf3.dae</uri>
+            <scale> 0.6472741048239816 0.6472741048239816 0.6472741048239816</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_29_2 >
+      <pose> 0.006021752622880983
+             -0.11965003001680759
+             0.0986781659618453 0
+             0 0.1578462154901148  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf1.dae</uri>
+            <scale> 0.6472741048239816 0.6472741048239816 0.6472741048239816</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+
+    <joint name=leaf_dirt_joint_29 type="revolute">
+      <parent>dirt_link</parent>
+      <child>leaf_stem_link_29</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <link name= leaf_stem_link_30 >
+      <pose>0 0 0 0 -0.3107916036774885 1.210874301118987 </pose>
+      <inertial>
+        <mass>1</mass>
+        <inertia> <!-- Modeled as slender rod -->
+          <ixx>1e-3</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.333e-2</iyy>
+          <iyz>0</iyz>
+          <izz>8.333e-2</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf_stem1.stl</uri>
+            <scale> 0.34286993189276954 0.34286993189276954 0.34286993189276954</scale>
+          </mesh>
+        </geometry>
+        <material> <!-- Green -->
+          <ambient>0.0 0.5 0.0 1.0</ambient>
+          <diffuse>0.0 0.5 0.0 1.0</diffuse>
+          <specular>0.1 0.1 0.1 1.0</specular>
+        </material>
+      </visual>
+    </link>
+
+    <link name= leaf_link_30_0 >
+      <pose> 0.0689843172973706
+             0.18331592230118599
+             0.06291232843009475 0
+             0 -0.505486299755123  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf2.dae</uri>
+            <scale> 0.385676091106781 0.385676091106781 0.385676091106781</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_30_1 >
+      <pose> 0.0689843172973706
+             0.18331592230118599
+             0.06291232843009475 0
+             0 1.1915439583221081  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf3.dae</uri>
+            <scale> 0.385676091106781 0.385676091106781 0.385676091106781</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_30_2 >
+      <pose> 0.0689843172973706
+             0.18331592230118599
+             0.06291232843009475 0
+             0 2.82045519819412  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf5.dae</uri>
+            <scale> 0.385676091106781 0.385676091106781 0.385676091106781</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+
+    <joint name=leaf_dirt_joint_30 type="revolute">
+      <parent>dirt_link</parent>
+      <child>leaf_stem_link_30</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <link name= leaf_stem_link_31 >
+      <pose>0 0 0 0 -0.5843556212089597 0.3171265242129975 </pose>
+      <inertial>
+        <mass>1</mass>
+        <inertia> <!-- Modeled as slender rod -->
+          <ixx>1e-3</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.333e-2</iyy>
+          <iyz>0</iyz>
+          <izz>8.333e-2</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf_stem1.stl</uri>
+            <scale> 0.3721994162634069 0.3721994162634069 0.3721994162634069</scale>
+          </mesh>
+        </geometry>
+        <material> <!-- Green -->
+          <ambient>0.0 0.5 0.0 1.0</ambient>
+          <diffuse>0.0 0.5 0.0 1.0</diffuse>
+          <specular>0.1 0.1 0.1 1.0</specular>
+        </material>
+      </visual>
+    </link>
+
+    <link name= leaf_link_31_0 >
+      <pose> 0.17697574906103916
+             0.058084041224345
+             0.12319697385645555 0
+             0 -1.2872621820778782  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf1.dae</uri>
+            <scale> 0.4940208909133383 0.4940208909133383 0.4940208909133383</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_31_1 >
+      <pose> 0.17697574906103916
+             0.058084041224345
+             0.12319697385645555 0
+             0 0.12673477575898137  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf4.dae</uri>
+            <scale> 0.4940208909133383 0.4940208909133383 0.4940208909133383</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_31_2 >
+      <pose> 0.17697574906103916
+             0.058084041224345
+             0.12319697385645555 0
+             0 1.7952085419750028  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf5.dae</uri>
+            <scale> 0.4940208909133383 0.4940208909133383 0.4940208909133383</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+
+    <joint name=leaf_dirt_joint_31 type="revolute">
+      <parent>dirt_link</parent>
+      <child>leaf_stem_link_31</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <link name= leaf_stem_link_32 >
+      <pose>0 0 0 0 -0.3488121683498746 0.10858493751357123 </pose>
+      <inertial>
+        <mass>1</mass>
+        <inertia> <!-- Modeled as slender rod -->
+          <ixx>1e-3</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.333e-2</iyy>
+          <iyz>0</iyz>
+          <izz>8.333e-2</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf_stem1.stl</uri>
+            <scale> 0.37844873339141755 0.37844873339141755 0.37844873339141755</scale>
+          </mesh>
+        </geometry>
+        <material> <!-- Green -->
+          <ambient>0.0 0.5 0.0 1.0</ambient>
+          <diffuse>0.0 0.5 0.0 1.0</diffuse>
+          <specular>0.1 0.1 0.1 1.0</specular>
+        </material>
+      </visual>
+    </link>
+
+    <link name= leaf_link_32_0 >
+      <pose> 0.2121381826216776
+             0.02312597321187938
+             0.07760812204260423 0
+             0 -1.3303973178721427  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf2.dae</uri>
+            <scale> 0.4083650618064524 0.4083650618064524 0.4083650618064524</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_32_1 >
+      <pose> 0.2121381826216776
+             0.02312597321187938
+             0.07760812204260423 0
+             0 0.18828590177813315  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf2.dae</uri>
+            <scale> 0.4083650618064524 0.4083650618064524 0.4083650618064524</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_32_2 >
+      <pose> 0.2121381826216776
+             0.02312597321187938
+             0.07760812204260423 0
+             0 1.5260013888560815  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf1.dae</uri>
+            <scale> 0.4083650618064524 0.4083650618064524 0.4083650618064524</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+
+    <joint name=leaf_dirt_joint_32 type="revolute">
+      <parent>dirt_link</parent>
+      <child>leaf_stem_link_32</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <link name= leaf_stem_link_33 >
+      <pose>0 0 0 0 -1.0090673273791102 -1.1073910011585144 </pose>
+      <inertial>
+        <mass>1</mass>
+        <inertia> <!-- Modeled as slender rod -->
+          <ixx>1e-3</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.333e-2</iyy>
+          <iyz>0</iyz>
+          <izz>8.333e-2</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf_stem2.stl</uri>
+            <scale> 0.19322987804885855 0.19322987804885855 0.19322987804885855</scale>
+          </mesh>
+        </geometry>
+        <material> <!-- Green -->
+          <ambient>0.0 0.5 0.0 1.0</ambient>
+          <diffuse>0.0 0.5 0.0 1.0</diffuse>
+          <specular>0.1 0.1 0.1 1.0</specular>
+        </material>
+      </visual>
+    </link>
+
+    <link name= leaf_link_33_0 >
+      <pose> 0.027604011591372154
+             -0.05524147935914868
+             0.09812237451140168 0
+             0 -2.5808613280375967  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf1.dae</uri>
+            <scale> 0.49308013060128364 0.49308013060128364 0.49308013060128364</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_33_1 >
+      <pose> 0.027604011591372154
+             -0.05524147935914868
+             0.09812237451140168 0
+             0 -1.037561734114901  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf3.dae</uri>
+            <scale> 0.49308013060128364 0.49308013060128364 0.49308013060128364</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_33_2 >
+      <pose> 0.027604011591372154
+             -0.05524147935914868
+             0.09812237451140168 0
+             0 0.3643739582648091  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf4.dae</uri>
+            <scale> 0.49308013060128364 0.49308013060128364 0.49308013060128364</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+
+    <joint name=leaf_dirt_joint_33 type="revolute">
+      <parent>dirt_link</parent>
+      <child>leaf_stem_link_33</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <link name= leaf_stem_link_34 >
+      <pose>0 0 0 0 -1.3017507581478982 0.45574634162759686 </pose>
+      <inertial>
+        <mass>1</mass>
+        <inertia> <!-- Modeled as slender rod -->
+          <ixx>1e-3</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.333e-2</iyy>
+          <iyz>0</iyz>
+          <izz>8.333e-2</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf_stem2.stl</uri>
+            <scale> 0.4102604178365047 0.4102604178365047 0.4102604178365047</scale>
+          </mesh>
+        </geometry>
+        <material> <!-- Green -->
+          <ambient>0.0 0.5 0.0 1.0</ambient>
+          <diffuse>0.0 0.5 0.0 1.0</diffuse>
+          <specular>0.1 0.1 0.1 1.0</specular>
+        </material>
+      </visual>
+    </link>
+
+    <link name= leaf_link_34_0 >
+      <pose> 0.05875277763319544
+             0.028798383519203084
+             0.2373007880026596 0
+             0 -1.2552619786694208  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf3.dae</uri>
+            <scale> 0.7219724210709303 0.7219724210709303 0.7219724210709303</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_34_1 >
+      <pose> 0.05875277763319544
+             0.028798383519203084
+             0.2373007880026596 0
+             0 0.48663552804906346  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf3.dae</uri>
+            <scale> 0.7219724210709303 0.7219724210709303 0.7219724210709303</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_34_2 >
+      <pose> 0.05875277763319544
+             0.028798383519203084
+             0.2373007880026596 0
+             0 1.938686180471275  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf4.dae</uri>
+            <scale> 0.7219724210709303 0.7219724210709303 0.7219724210709303</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+
+    <joint name=leaf_dirt_joint_34 type="revolute">
+      <parent>dirt_link</parent>
+      <child>leaf_stem_link_34</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <link name= leaf_stem_link_35 >
+      <pose>0 0 0 0 -0.8423057968521972 1.4879343908560738 </pose>
+      <inertial>
+        <mass>1</mass>
+        <inertia> <!-- Modeled as slender rod -->
+          <ixx>1e-3</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.333e-2</iyy>
+          <iyz>0</iyz>
+          <izz>8.333e-2</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf_stem2.stl</uri>
+            <scale> 0.29613266300407853 0.29613266300407853 0.29613266300407853</scale>
+          </mesh>
+        </geometry>
+        <material> <!-- Green -->
+          <ambient>0.0 0.5 0.0 1.0</ambient>
+          <diffuse>0.0 0.5 0.0 1.0</diffuse>
+          <specular>0.1 0.1 0.1 1.0</specular>
+        </material>
+      </visual>
+    </link>
+
+    <link name= leaf_link_35_0 >
+      <pose> 0.00979045414891409
+             0.11788327608997828
+             0.13258099298576448 0
+             0 -0.05833630878514939  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf2.dae</uri>
+            <scale> 0.6753981291075731 0.6753981291075731 0.6753981291075731</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_35_1 >
+      <pose> 0.00979045414891409
+             0.11788327608997828
+             0.13258099298576448 0
+             0 1.6907392451496315  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf2.dae</uri>
+            <scale> 0.6753981291075731 0.6753981291075731 0.6753981291075731</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_35_2 >
+      <pose> 0.00979045414891409
+             0.11788327608997828
+             0.13258099298576448 0
+             0 3.0163930091678424  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf1.dae</uri>
+            <scale> 0.6753981291075731 0.6753981291075731 0.6753981291075731</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+
+    <joint name=leaf_dirt_joint_35 type="revolute">
+      <parent>dirt_link</parent>
+      <child>leaf_stem_link_35</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <link name= leaf_stem_link_36 >
+      <pose>0 0 0 0 -0.3488181626805815 0.9819838525988072 </pose>
+      <inertial>
+        <mass>1</mass>
+        <inertia> <!-- Modeled as slender rod -->
+          <ixx>1e-3</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.333e-2</iyy>
+          <iyz>0</iyz>
+          <izz>8.333e-2</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf_stem1.stl</uri>
+            <scale> 0.15688038561621204 0.15688038561621204 0.15688038561621204</scale>
+          </mesh>
+        </geometry>
+        <material> <!-- Green -->
+          <ambient>0.0 0.5 0.0 1.0</ambient>
+          <diffuse>0.0 0.5 0.0 1.0</diffuse>
+          <specular>0.1 0.1 0.1 1.0</specular>
+        </material>
+      </visual>
+    </link>
+
+    <link name= leaf_link_36_0 >
+      <pose> 0.049128136665934914
+             0.07356305269896862
+             0.03217184182068048 0
+             0 -0.5850043269772096  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf1.dae</uri>
+            <scale> 0.7509919192030453 0.7509919192030453 0.7509919192030453</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_36_1 >
+      <pose> 0.049128136665934914
+             0.07356305269896862
+             0.03217184182068048 0
+             0 1.1291956295451513  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf2.dae</uri>
+            <scale> 0.7509919192030453 0.7509919192030453 0.7509919192030453</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_36_2 >
+      <pose> 0.049128136665934914
+             0.07356305269896862
+             0.03217184182068048 0
+             0 2.5974059145238555  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf3.dae</uri>
+            <scale> 0.7509919192030453 0.7509919192030453 0.7509919192030453</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+
+    <joint name=leaf_dirt_joint_36 type="revolute">
+      <parent>dirt_link</parent>
+      <child>leaf_stem_link_36</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <link name= leaf_stem_link_37 >
+      <pose>0 0 0 0 -1.1987066080474207 2.850968143603863 </pose>
+      <inertial>
+        <mass>1</mass>
+        <inertia> <!-- Modeled as slender rod -->
+          <ixx>1e-3</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.333e-2</iyy>
+          <iyz>0</iyz>
+          <izz>8.333e-2</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf_stem2.stl</uri>
+            <scale> 0.3211378355813174 0.3211378355813174 0.3211378355813174</scale>
+          </mesh>
+        </geometry>
+        <material> <!-- Green -->
+          <ambient>0.0 0.5 0.0 1.0</ambient>
+          <diffuse>0.0 0.5 0.0 1.0</diffuse>
+          <specular>0.1 0.1 0.1 1.0</specular>
+        </material>
+      </visual>
+    </link>
+
+    <link name= leaf_link_37_0 >
+      <pose> -0.06711465478102777
+             0.02007352586861374
+             0.17949735394120087 0
+             0 1.331662902880892  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf4.dae</uri>
+            <scale> 0.4506374514661039 0.4506374514661039 0.4506374514661039</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_37_1 >
+      <pose> -0.06711465478102777
+             0.02007352586861374
+             0.17949735394120087 0
+             0 2.8257566197871617  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf4.dae</uri>
+            <scale> 0.4506374514661039 0.4506374514661039 0.4506374514661039</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_37_2 >
+      <pose> -0.06711465478102777
+             0.02007352586861374
+             0.17949735394120087 0
+             0 4.416977349232725  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf1.dae</uri>
+            <scale> 0.4506374514661039 0.4506374514661039 0.4506374514661039</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+
+    <joint name=leaf_dirt_joint_37 type="revolute">
+      <parent>dirt_link</parent>
+      <child>leaf_stem_link_37</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <link name= leaf_stem_link_38 >
+      <pose>0 0 0 0 -1.056098300911925 1.8261188033510987 </pose>
+      <inertial>
+        <mass>1</mass>
+        <inertia> <!-- Modeled as slender rod -->
+          <ixx>1e-3</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.333e-2</iyy>
+          <iyz>0</iyz>
+          <izz>8.333e-2</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf_stem2.stl</uri>
+            <scale> 0.33424679769328935 0.33424679769328935 0.33424679769328935</scale>
+          </mesh>
+        </geometry>
+        <material> <!-- Green -->
+          <ambient>0.0 0.5 0.0 1.0</ambient>
+          <diffuse>0.0 0.5 0.0 1.0</diffuse>
+          <specular>0.1 0.1 0.1 1.0</specular>
+        </material>
+      </visual>
+    </link>
+
+    <link name= leaf_link_38_0 >
+      <pose> -0.024933533634211948
+             0.09552375687654444
+             0.17456535340456644 0
+             0 0.29099102863836945  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf3.dae</uri>
+            <scale> 0.6169555440516908 0.6169555440516908 0.6169555440516908</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_38_1 >
+      <pose> -0.024933533634211948
+             0.09552375687654444
+             0.17456535340456644 0
+             0 1.8316371065982073  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf2.dae</uri>
+            <scale> 0.6169555440516908 0.6169555440516908 0.6169555440516908</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_38_2 >
+      <pose> -0.024933533634211948
+             0.09552375687654444
+             0.17456535340456644 0
+             0 3.2852372945726  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf1.dae</uri>
+            <scale> 0.6169555440516908 0.6169555440516908 0.6169555440516908</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+
+    <joint name=leaf_dirt_joint_38 type="revolute">
+      <parent>dirt_link</parent>
+      <child>leaf_stem_link_38</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <link name= leaf_stem_link_39 >
+      <pose>0 0 0 0 -0.3047426400908657 -2.4130186958708837 </pose>
+      <inertial>
+        <mass>1</mass>
+        <inertia> <!-- Modeled as slender rod -->
+          <ixx>1e-3</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.333e-2</iyy>
+          <iyz>0</iyz>
+          <izz>8.333e-2</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf_stem1.stl</uri>
+            <scale> 0.2827004728100788 0.2827004728100788 0.2827004728100788</scale>
+          </mesh>
+        </geometry>
+        <material> <!-- Green -->
+          <ambient>0.0 0.5 0.0 1.0</ambient>
+          <diffuse>0.0 0.5 0.0 1.0</diffuse>
+          <specular>0.1 0.1 0.1 1.0</specular>
+        </material>
+      </visual>
+    </link>
+
+    <link name= leaf_link_39_0 >
+      <pose> -0.12072661656930538
+             -0.10773071905318718
+             0.050894173161044 0
+             0 -4.058194988903542  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf4.dae</uri>
+            <scale> 0.46347045064926096 0.46347045064926096 0.46347045064926096</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_39_1 >
+      <pose> -0.12072661656930538
+             -0.10773071905318718
+             0.050894173161044 0
+             0 -2.3369966213899964  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf1.dae</uri>
+            <scale> 0.46347045064926096 0.46347045064926096 0.46347045064926096</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_39_2 >
+      <pose> -0.12072661656930538
+             -0.10773071905318718
+             0.050894173161044 0
+             0 -0.9595906198353044  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf2.dae</uri>
+            <scale> 0.46347045064926096 0.46347045064926096 0.46347045064926096</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+
+    <joint name=leaf_dirt_joint_39 type="revolute">
+      <parent>dirt_link</parent>
+      <child>leaf_stem_link_39</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <link name= leaf_stem_link_40 >
+      <pose>0 0 0 0 -0.4893319361039046 2.1600293890819566 </pose>
+      <inertial>
+        <mass>1</mass>
+        <inertia> <!-- Modeled as slender rod -->
+          <ixx>1e-3</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.333e-2</iyy>
+          <iyz>0</iyz>
+          <izz>8.333e-2</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf_stem1.stl</uri>
+            <scale> 0.24234482124658552 0.24234482124658552 0.24234482124658552</scale>
+          </mesh>
+        </geometry>
+        <material> <!-- Green -->
+          <ambient>0.0 0.5 0.0 1.0</ambient>
+          <diffuse>0.0 0.5 0.0 1.0</diffuse>
+          <specular>0.1 0.1 0.1 1.0</specular>
+        </material>
+      </visual>
+    </link>
+
+    <link name= leaf_link_40_0 >
+      <pose> -0.07132321349470098
+             0.10670012467563104
+             0.06834652200081806 0
+             0 0.4699701895183006  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf4.dae</uri>
+            <scale> 0.4676290811413347 0.4676290811413347 0.4676290811413347</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_40_1 >
+      <pose> -0.07132321349470098
+             0.10670012467563104
+             0.06834652200081806 0
+             0 1.9402611500542466  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf5.dae</uri>
+            <scale> 0.4676290811413347 0.4676290811413347 0.4676290811413347</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_40_2 >
+      <pose> -0.07132321349470098
+             0.10670012467563104
+             0.06834652200081806 0
+             0 3.7089390064110725  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf4.dae</uri>
+            <scale> 0.4676290811413347 0.4676290811413347 0.4676290811413347</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+
+    <joint name=leaf_dirt_joint_40 type="revolute">
+      <parent>dirt_link</parent>
+      <child>leaf_stem_link_40</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <link name= leaf_stem_link_41 >
+      <pose>0 0 0 0 -1.1858949575973599 -3.0125411849226498 </pose>
+      <inertial>
+        <mass>1</mass>
+        <inertia> <!-- Modeled as slender rod -->
+          <ixx>1e-3</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.333e-2</iyy>
+          <iyz>0</iyz>
+          <izz>8.333e-2</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf_stem2.stl</uri>
+            <scale> 0.27146474546922905 0.27146474546922905 0.27146474546922905</scale>
+          </mesh>
+        </geometry>
+        <material> <!-- Green -->
+          <ambient>0.0 0.5 0.0 1.0</ambient>
+          <diffuse>0.0 0.5 0.0 1.0</diffuse>
+          <specular>0.1 0.1 0.1 1.0</specular>
+        </material>
+      </visual>
+    </link>
+
+    <link name= leaf_link_41_0 >
+      <pose> -0.06064720392106847
+             -0.007870351004425886
+             0.15096189295112147 0
+             0 -4.647294020886548  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf1.dae</uri>
+            <scale> 0.6856541039665521 0.6856541039665521 0.6856541039665521</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_41_1 >
+      <pose> -0.06064720392106847
+             -0.007870351004425886
+             0.15096189295112147 0
+             0 -3.055579126637715  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf4.dae</uri>
+            <scale> 0.6856541039665521 0.6856541039665521 0.6856541039665521</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_41_2 >
+      <pose> -0.06064720392106847
+             -0.007870351004425886
+             0.15096189295112147 0
+             0 -1.482403514946283  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf2.dae</uri>
+            <scale> 0.6856541039665521 0.6856541039665521 0.6856541039665521</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+
+    <joint name=leaf_dirt_joint_41 type="revolute">
+      <parent>dirt_link</parent>
+      <child>leaf_stem_link_41</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <link name= leaf_stem_link_42 >
+      <pose>0 0 0 0 -1.0309608106927217 -0.6668269342866759 </pose>
+      <inertial>
+        <mass>1</mass>
+        <inertia> <!-- Modeled as slender rod -->
+          <ixx>1e-3</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.333e-2</iyy>
+          <iyz>0</iyz>
+          <izz>8.333e-2</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf_stem2.stl</uri>
+            <scale> 0.16261456207660557 0.16261456207660557 0.16261456207660557</scale>
+          </mesh>
+        </geometry>
+        <material> <!-- Green -->
+          <ambient>0.0 0.5 0.0 1.0</ambient>
+          <diffuse>0.0 0.5 0.0 1.0</diffuse>
+          <specular>0.1 0.1 0.1 1.0</specular>
+        </material>
+      </visual>
+    </link>
+
+    <link name= leaf_link_42_0 >
+      <pose> 0.0394071449833124
+             -0.03101745898420204
+             0.08369380293784824 0
+             0 -2.0563347745674063  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf2.dae</uri>
+            <scale> 0.6923653504378589 0.6923653504378589 0.6923653504378589</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_42_1 >
+      <pose> 0.0394071449833124
+             -0.03101745898420204
+             0.08369380293784824 0
+             0 -0.7390328822182566  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf3.dae</uri>
+            <scale> 0.6923653504378589 0.6923653504378589 0.6923653504378589</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_42_2 >
+      <pose> 0.0394071449833124
+             -0.03101745898420204
+             0.08369380293784824 0
+             0 0.8859337279148458  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf4.dae</uri>
+            <scale> 0.6923653504378589 0.6923653504378589 0.6923653504378589</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+
+    <joint name=leaf_dirt_joint_42 type="revolute">
+      <parent>dirt_link</parent>
+      <child>leaf_stem_link_42</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <link name= leaf_stem_link_43 >
+      <pose>0 0 0 0 -1.238062524241878 -1.4207602604526888 </pose>
+      <inertial>
+        <mass>1</mass>
+        <inertia> <!-- Modeled as slender rod -->
+          <ixx>1e-3</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.333e-2</iyy>
+          <iyz>0</iyz>
+          <izz>8.333e-2</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf_stem2.stl</uri>
+            <scale> 0.33400617708600633 0.33400617708600633 0.33400617708600633</scale>
+          </mesh>
+        </geometry>
+        <material> <!-- Green -->
+          <ambient>0.0 0.5 0.0 1.0</ambient>
+          <diffuse>0.0 0.5 0.0 1.0</diffuse>
+          <specular>0.1 0.1 0.1 1.0</specular>
+        </material>
+      </visual>
+    </link>
+
+    <link name= leaf_link_43_0 >
+      <pose> 0.009784178350930876
+             -0.06472211344374465
+             0.18941215210421775 0
+             0 -3.1763066297407034  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf4.dae</uri>
+            <scale> 0.6653199594034392 0.6653199594034392 0.6653199594034392</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_43_1 >
+      <pose> 0.009784178350930876
+             -0.06472211344374465
+             0.18941215210421775 0
+             0 -1.5973639142984344  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf3.dae</uri>
+            <scale> 0.6653199594034392 0.6653199594034392 0.6653199594034392</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_43_2 >
+      <pose> 0.009784178350930876
+             -0.06472211344374465
+             0.18941215210421775 0
+             0 0.1476507938643845  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf4.dae</uri>
+            <scale> 0.6653199594034392 0.6653199594034392 0.6653199594034392</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+
+    <joint name=leaf_dirt_joint_43 type="revolute">
+      <parent>dirt_link</parent>
+      <child>leaf_stem_link_43</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <link name= leaf_stem_link_44 >
+      <pose>0 0 0 0 -0.5010207192527456 1.3023400288151308 </pose>
+      <inertial>
+        <mass>1</mass>
+        <inertia> <!-- Modeled as slender rod -->
+          <ixx>1e-3</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.333e-2</iyy>
+          <iyz>0</iyz>
+          <izz>8.333e-2</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf_stem1.stl</uri>
+            <scale> 0.3198819889764215 0.3198819889764215 0.3198819889764215</scale>
+          </mesh>
+        </geometry>
+        <material> <!-- Green -->
+          <ambient>0.0 0.5 0.0 1.0</ambient>
+          <diffuse>0.0 0.5 0.0 1.0</diffuse>
+          <specular>0.1 0.1 0.1 1.0</specular>
+        </material>
+      </visual>
+    </link>
+
+    <link name= leaf_link_44_0 >
+      <pose> 0.044650985883731835
+             0.16231002788049892
+             0.09218763248281502 0
+             0 -0.32053734384516863  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf3.dae</uri>
+            <scale> 0.6109033273693923 0.6109033273693923 0.6109033273693923</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_44_1 >
+      <pose> 0.044650985883731835
+             0.16231002788049892
+             0.09218763248281502 0
+             0 1.2831342907869494  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf2.dae</uri>
+            <scale> 0.6109033273693923 0.6109033273693923 0.6109033273693923</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_44_2 >
+      <pose> 0.044650985883731835
+             0.16231002788049892
+             0.09218763248281502 0
+             0 2.890774276888648  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf2.dae</uri>
+            <scale> 0.6109033273693923 0.6109033273693923 0.6109033273693923</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+
+    <joint name=leaf_dirt_joint_44 type="revolute">
+      <parent>dirt_link</parent>
+      <child>leaf_stem_link_44</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <link name= leaf_stem_link_45 >
+      <pose>0 0 0 0 -0.6922258065526306 1.259355699353776 </pose>
+      <inertial>
+        <mass>1</mass>
+        <inertia> <!-- Modeled as slender rod -->
+          <ixx>1e-3</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.333e-2</iyy>
+          <iyz>0</iyz>
+          <izz>8.333e-2</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf_stem1.stl</uri>
+            <scale> 0.40910161223639857 0.40910161223639857 0.40910161223639857</scale>
+          </mesh>
+        </geometry>
+        <material> <!-- Green -->
+          <ambient>0.0 0.5 0.0 1.0</ambient>
+          <diffuse>0.0 0.5 0.0 1.0</diffuse>
+          <specular>0.1 0.1 0.1 1.0</specular>
+        </material>
+      </visual>
+    </link>
+
+    <link name= leaf_link_45_0 >
+      <pose> 0.05790384751996861
+             0.1798721515098325
+             0.15666601431708 0
+             0 -0.21742958813094249  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf2.dae</uri>
+            <scale> 0.6025605549088775 0.6025605549088775 0.6025605549088775</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_45_1 >
+      <pose> 0.05790384751996861
+             0.1798721515098325
+             0.15666601431708 0
+             0 1.260584795125175  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf3.dae</uri>
+            <scale> 0.6025605549088775 0.6025605549088775 0.6025605549088775</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_45_2 >
+      <pose> 0.05790384751996861
+             0.1798721515098325
+             0.15666601431708 0
+             0 2.7226829430351023  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf3.dae</uri>
+            <scale> 0.6025605549088775 0.6025605549088775 0.6025605549088775</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+
+    <joint name=leaf_dirt_joint_45 type="revolute">
+      <parent>dirt_link</parent>
+      <child>leaf_stem_link_45</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <link name= leaf_stem_link_46 >
+      <pose>0 0 0 0 -1.024262380477035 0.6156587811708434 </pose>
+      <inertial>
+        <mass>1</mass>
+        <inertia> <!-- Modeled as slender rod -->
+          <ixx>1e-3</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.333e-2</iyy>
+          <iyz>0</iyz>
+          <izz>8.333e-2</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf_stem2.stl</uri>
+            <scale> 0.2659836358315367 0.2659836358315367 0.2659836358315367</scale>
+          </mesh>
+        </geometry>
+        <material> <!-- Green -->
+          <ambient>0.0 0.5 0.0 1.0</ambient>
+          <diffuse>0.0 0.5 0.0 1.0</diffuse>
+          <specular>0.1 0.1 0.1 1.0</specular>
+        </material>
+      </visual>
+    </link>
+
+    <link name= leaf_link_46_0 >
+      <pose> 0.06771465246877982
+             0.04789968099817414
+             0.1363428488486448 0
+             0 -0.7739711263876425  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf4.dae</uri>
+            <scale> 0.5617463660406515 0.5617463660406515 0.5617463660406515</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_46_1 >
+      <pose> 0.06771465246877982
+             0.04789968099817414
+             0.1363428488486448 0
+             0 0.605251637646137  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf3.dae</uri>
+            <scale> 0.5617463660406515 0.5617463660406515 0.5617463660406515</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= leaf_link_46_2 >
+      <pose> 0.06771465246877982
+             0.04789968099817414
+             0.1363428488486448 0
+             0 2.23815505680227  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf4.dae</uri>
+            <scale> 0.5617463660406515 0.5617463660406515 0.5617463660406515</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+
+    <joint name=leaf_dirt_joint_46 type="revolute">
+      <parent>dirt_link</parent>
+      <child>leaf_stem_link_46</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+
+    <link name= berry_stem_link_1 >
+      <pose>0 0 0 0 -0.09958829344062381 -1.6873808955588008</pose>
+      <inertial>
+        <mass>1</mass>
+        <inertia> <!-- Modeled as slender rod -->
+          <ixx>1e-3</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.333e-2</iyy>
+          <iyz>0</iyz>
+          <izz>8.333e-2</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/strawb_stem1.stl</uri>
+            <scale>0.22282900123773408 0.22282900123773408 0.22282900123773408</scale>
+          </mesh>
+        </geometry>
+        <material> <!-- Green -->
+          <ambient>0.0 0.5 0.0 1.0</ambient>
+          <diffuse>0.0 0.5 0.0 1.0</diffuse>
+          <specular>0.1 0.1 0.1 1.0</specular>
+        </material>
+      </visual>
+    </link>
+
+    <link name= berry_link_1 >
+      <pose> -0.016632178113280188 -0.1420149791405976 0.014144159135287994
+             0 -1.5607963267948965  -1.6873808955588008</pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <sphere>
+            <radius>0.014287027024372454</radius>
+          </sphere>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/1002r1.dae</uri>
+            <scale>0.28574054048744907 0.28574054048744907 0.28574054048744907</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= calyx_link_1 >
+      <pose> -0.016632178113280188 -0.1420149791405976 0.014144159135287994
+             0 -1.5607963267948965 -1.6873808955588008 </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/calyx2_1002.dae</uri>
+            <scale>0.28574054048744907 0.28574054048744907 0.28574054048744907</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name=berry_dirt_joint_1 type="revolute">
+      <parent>dirt_link</parent>
+      <child>berry_stem_link_1</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <joint name=stem_to_calyx_joint_1 type="ball">
+      <parent> berry_link_1 </parent>
+      <child> calyx_link_1 </child>
+    </joint>
+
+    <joint name=stem_to_berry_joint_1 type="ball">
+      <parent> berry_stem_link_1 </parent>
+      <child> berry_link_1 </child>
+    </joint>
+
+    <link name= berry_stem_link_2 >
+      <pose>0 0 0 0 -0.12571595421523327 2.581946888850508</pose>
+      <inertial>
+        <mass>1</mass>
+        <inertia> <!-- Modeled as slender rod -->
+          <ixx>1e-3</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.333e-2</iyy>
+          <iyz>0</iyz>
+          <izz>8.333e-2</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/strawb_stem1.stl</uri>
+            <scale>0.2593748025863711 0.2593748025863711 0.2593748025863711</scale>
+          </mesh>
+        </geometry>
+        <material> <!-- Green -->
+          <ambient>0.0 0.5 0.0 1.0</ambient>
+          <diffuse>0.0 0.5 0.0 1.0</diffuse>
+          <specular>0.1 0.1 0.1 1.0</specular>
+        </material>
+      </visual>
+    </link>
+
+    <link name= berry_link_2 >
+      <pose> -0.14343044734830657 0.08985288893721771 0.02117656721769526
+             0 -1.5607963267948965  2.581946888850508</pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <sphere>
+            <radius>0.02139046833599498</radius>
+          </sphere>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/1004r0.dae</uri>
+            <scale>0.4278093667198996 0.4278093667198996 0.4278093667198996</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= calyx_link_2 >
+      <pose> -0.14343044734830657 0.08985288893721771 0.02117656721769526
+             0 -1.5607963267948965 2.581946888850508 </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/calyx3_1004.dae</uri>
+            <scale>0.4278093667198996 0.4278093667198996 0.4278093667198996</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name=berry_dirt_joint_2 type="revolute">
+      <parent>dirt_link</parent>
+      <child>berry_stem_link_2</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <joint name=stem_to_calyx_joint_2 type="ball">
+      <parent> berry_link_2 </parent>
+      <child> calyx_link_2 </child>
+    </joint>
+
+    <joint name=stem_to_berry_joint_2 type="ball">
+      <parent> berry_stem_link_2 </parent>
+      <child> berry_link_2 </child>
+    </joint>
+
+    <link name= berry_stem_link_3 >
+      <pose>0 0 0 0 -0.142841154845471 -2.475456937633311</pose>
+      <inertial>
+        <mass>1</mass>
+        <inertia> <!-- Modeled as slender rod -->
+          <ixx>1e-3</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.333e-2</iyy>
+          <iyz>0</iyz>
+          <izz>8.333e-2</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/strawb_stem1.stl</uri>
+            <scale>0.17638448784354654 0.17638448784354654 0.17638448784354654</scale>
+          </mesh>
+        </geometry>
+        <material> <!-- Green -->
+          <ambient>0.0 0.5 0.0 1.0</ambient>
+          <diffuse>0.0 0.5 0.0 1.0</diffuse>
+          <specular>0.1 0.1 0.1 1.0</specular>
+        </material>
+      </visual>
+    </link>
+
+    <link name= berry_link_3 >
+      <pose> -0.09147292830328085 -0.071896219163144 0.016565731004643126
+             0 -1.5607963267948965  -2.475456937633311</pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <sphere>
+            <radius>0.016733058803852462</radius>
+          </sphere>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/1000r0.dae</uri>
+            <scale>0.33466117607704926 0.33466117607704926 0.33466117607704926</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= calyx_link_3 >
+      <pose> -0.09147292830328085 -0.071896219163144 0.016565731004643126
+             0 -1.5607963267948965 -2.475456937633311 </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/calyx2_1000.dae</uri>
+            <scale>0.33466117607704926 0.33466117607704926 0.33466117607704926</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name=berry_dirt_joint_3 type="revolute">
+      <parent>dirt_link</parent>
+      <child>berry_stem_link_3</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <joint name=stem_to_calyx_joint_3 type="ball">
+      <parent> berry_link_3 </parent>
+      <child> calyx_link_3 </child>
+    </joint>
+
+    <joint name=stem_to_berry_joint_3 type="ball">
+      <parent> berry_stem_link_3 </parent>
+      <child> berry_link_3 </child>
+    </joint>
+
+    <link name= berry_stem_link_4 >
+      <pose>0 0 0 0 -0.07346734831775449 -2.01898069056002</pose>
+      <inertial>
+        <mass>1</mass>
+        <inertia> <!-- Modeled as slender rod -->
+          <ixx>1e-3</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.333e-2</iyy>
+          <iyz>0</iyz>
+          <izz>8.333e-2</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/strawb_stem1.stl</uri>
+            <scale>0.27622751150431507 0.27622751150431507 0.27622751150431507</scale>
+          </mesh>
+        </geometry>
+        <material> <!-- Green -->
+          <ambient>0.0 0.5 0.0 1.0</ambient>
+          <diffuse>0.0 0.5 0.0 1.0</diffuse>
+          <specular>0.1 0.1 0.1 1.0</specular>
+        </material>
+      </visual>
+    </link>
+
+    <link name= berry_link_4 >
+      <pose> -0.07550406057323862 -0.15703260654454962 0.012695949771374004
+             0 -1.5607963267948965  -2.01898069056002</pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <sphere>
+            <radius>0.012824189529312899</radius>
+          </sphere>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/1001r0.dae</uri>
+            <scale>0.256483790586258 0.256483790586258 0.256483790586258</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= calyx_link_4 >
+      <pose> -0.07550406057323862 -0.15703260654454962 0.012695949771374004
+             0 -1.5607963267948965 -2.01898069056002 </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/calyx1_1001.dae</uri>
+            <scale>0.256483790586258 0.256483790586258 0.256483790586258</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name=berry_dirt_joint_4 type="revolute">
+      <parent>dirt_link</parent>
+      <child>berry_stem_link_4</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <joint name=stem_to_calyx_joint_4 type="ball">
+      <parent> berry_link_4 </parent>
+      <child> calyx_link_4 </child>
+    </joint>
+
+    <joint name=stem_to_berry_joint_4 type="ball">
+      <parent> berry_stem_link_4 </parent>
+      <child> berry_link_4 </child>
+    </joint>
+
+    <link name= berry_stem_link_5 >
+      <pose>0 0 0 0 -0.07165032750876309 1.9148303550727945</pose>
+      <inertial>
+        <mass>1</mass>
+        <inertia> <!-- Modeled as slender rod -->
+          <ixx>1e-3</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.333e-2</iyy>
+          <iyz>0</iyz>
+          <izz>8.333e-2</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/strawb_stem2.stl</uri>
+            <scale>0.28885221939493066 0.28885221939493066 0.28885221939493066</scale>
+          </mesh>
+        </geometry>
+        <material> <!-- Green -->
+          <ambient>0.0 0.5 0.0 1.0</ambient>
+          <diffuse>0.0 0.5 0.0 1.0</diffuse>
+          <specular>0.1 0.1 0.1 1.0</specular>
+        </material>
+      </visual>
+    </link>
+
+    <link name= berry_link_5 >
+      <pose> -0.06093738469131662 0.1700820908457005 0.011343843304810903
+             0 -1.4264453093688163  1.9148303550727945</pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <sphere>
+            <radius>0.011343843304810903</radius>
+          </sphere>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/1002u0.dae</uri>
+            <scale>0.22687686609621804 0.22687686609621804 0.22687686609621804</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= calyx_link_5 >
+      <pose> -0.06093738469131662 0.1700820908457005 0.011343843304810903
+             0 -1.4264453093688163 1.9148303550727945 </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/calyx6_1002.dae</uri>
+            <scale>0.22687686609621804 0.22687686609621804 0.22687686609621804</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name=berry_dirt_joint_5 type="revolute">
+      <parent>dirt_link</parent>
+      <child>berry_stem_link_5</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <joint name=stem_to_calyx_joint_5 type="ball">
+      <parent> berry_link_5 </parent>
+      <child> calyx_link_5 </child>
+    </joint>
+
+    <joint name=stem_to_berry_joint_5 type="ball">
+      <parent> berry_stem_link_5 </parent>
+      <child> berry_link_5 </child>
+    </joint>
+
+    <link name= berry_stem_link_6 >
+      <pose>0 0 0 0 -0.1021433971370538 -2.3768805576419263</pose>
+      <inertial>
+        <mass>1</mass>
+        <inertia> <!-- Modeled as slender rod -->
+          <ixx>1e-3</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.333e-2</iyy>
+          <iyz>0</iyz>
+          <izz>8.333e-2</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/strawb_stem1.stl</uri>
+            <scale>0.3234218044772892 0.3234218044772892 0.3234218044772892</scale>
+          </mesh>
+        </geometry>
+        <material> <!-- Green -->
+          <ambient>0.0 0.5 0.0 1.0</ambient>
+          <diffuse>0.0 0.5 0.0 1.0</diffuse>
+          <specular>0.1 0.1 0.1 1.0</specular>
+        </material>
+      </visual>
+    </link>
+
+    <link name= berry_link_6 >
+      <pose> -0.15000111243495082 -0.14392016957342865 0.021094576569002214
+             0 -1.5607963267948965  -2.3768805576419263</pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <sphere>
+            <radius>0.02130764951287379</radius>
+          </sphere>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/1000u3.dae</uri>
+            <scale>0.42615299025747577 0.42615299025747577 0.42615299025747577</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= calyx_link_6 >
+      <pose> -0.15000111243495082 -0.14392016957342865 0.021094576569002214
+             0 -1.5607963267948965 -2.3768805576419263 </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/calyx2_1000.dae</uri>
+            <scale>0.42615299025747577 0.42615299025747577 0.42615299025747577</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name=berry_dirt_joint_6 type="revolute">
+      <parent>dirt_link</parent>
+      <child>berry_stem_link_6</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <joint name=stem_to_calyx_joint_6 type="ball">
+      <parent> berry_link_6 </parent>
+      <child> calyx_link_6 </child>
+    </joint>
+
+    <joint name=stem_to_berry_joint_6 type="ball">
+      <parent> berry_stem_link_6 </parent>
+      <child> berry_link_6 </child>
+    </joint>
+
+    <link name= berry_stem_link_7 >
+      <pose>0 0 0 0 -0.08080935014692893 2.828750786458663</pose>
+      <inertial>
+        <mass>1</mass>
+        <inertia> <!-- Modeled as slender rod -->
+          <ixx>1e-3</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.333e-2</iyy>
+          <iyz>0</iyz>
+          <izz>8.333e-2</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/strawb_stem1.stl</uri>
+            <scale>0.30220993145096026 0.30220993145096026 0.30220993145096026</scale>
+          </mesh>
+        </geometry>
+        <material> <!-- Green -->
+          <ambient>0.0 0.5 0.0 1.0</ambient>
+          <diffuse>0.0 0.5 0.0 1.0</diffuse>
+          <specular>0.1 0.1 0.1 1.0</specular>
+        </material>
+      </visual>
+    </link>
+
+    <link name= berry_link_7 >
+      <pose> -0.18225979577578086 0.058954453220418146 0.015358347541439969
+             0 -1.5607963267948965  2.828750786458663</pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <sphere>
+            <radius>0.015513479753407007</radius>
+          </sphere>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/1000u3.dae</uri>
+            <scale>0.3102695950681401 0.3102695950681401 0.3102695950681401</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= calyx_link_7 >
+      <pose> -0.18225979577578086 0.058954453220418146 0.015358347541439969
+             0 -1.5607963267948965 2.828750786458663 </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/calyx6_1000.dae</uri>
+            <scale>0.3102695950681401 0.3102695950681401 0.3102695950681401</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name=berry_dirt_joint_7 type="revolute">
+      <parent>dirt_link</parent>
+      <child>berry_stem_link_7</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <joint name=stem_to_calyx_joint_7 type="ball">
+      <parent> berry_link_7 </parent>
+      <child> calyx_link_7 </child>
+    </joint>
+
+    <joint name=stem_to_berry_joint_7 type="ball">
+      <parent> berry_stem_link_7 </parent>
+      <child> berry_link_7 </child>
+    </joint>
+
+    <link name= berry_stem_link_8 >
+      <pose>0 0 0 0 -0.09154967209947633 -1.4816983628501743</pose>
+      <inertial>
+        <mass>1</mass>
+        <inertia> <!-- Modeled as slender rod -->
+          <ixx>1e-3</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.333e-2</iyy>
+          <iyz>0</iyz>
+          <izz>8.333e-2</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/strawb_stem3.stl</uri>
+            <scale>0.3522590946551962 0.3522590946551962 0.3522590946551962</scale>
+          </mesh>
+        </geometry>
+        <material> <!-- Green -->
+          <ambient>0.0 0.5 0.0 1.0</ambient>
+          <diffuse>0.0 0.5 0.0 1.0</diffuse>
+          <specular>0.1 0.1 0.1 1.0</specular>
+        </material>
+      </visual>
+    </link>
+
+    <link name= berry_link_8 >
+      <pose> 0.018590670537999884 -0.20810184629669093 0.014564905637045475
+             0 0.0  -1.4816983628501743</pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <sphere>
+            <radius>0.005082879640143673</radius>
+          </sphere>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/1001g.dae</uri>
+            <scale>0.10165759280287345 0.10165759280287345 0.10165759280287345</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= calyx_link_8 >
+      <pose> 0.018590670537999884 -0.20810184629669093 0.014564905637045475
+             0 0.0 -1.4816983628501743 </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/calyx7_1001.dae</uri>
+            <scale>0.10165759280287345 0.10165759280287345 0.10165759280287345</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name=berry_dirt_joint_8 type="revolute">
+      <parent>dirt_link</parent>
+      <child>berry_stem_link_8</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <joint name=stem_to_calyx_joint_8 type="ball">
+      <parent> berry_link_8 </parent>
+      <child> calyx_link_8 </child>
+    </joint>
+
+    <joint name=stem_to_berry_joint_8 type="ball">
+      <parent> berry_stem_link_8 </parent>
+      <child> berry_link_8 </child>
+    </joint>
+
+    <link name= berry_stem_link_9 >
+      <pose>0 0 0 0 -0.06228184304389186 -2.861085967605619</pose>
+      <inertial>
+        <mass>1</mass>
+        <inertia> <!-- Modeled as slender rod -->
+          <ixx>1e-3</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.333e-2</iyy>
+          <iyz>0</iyz>
+          <izz>8.333e-2</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/strawb_stem3.stl</uri>
+            <scale>0.2947784789969124 0.2947784789969124 0.2947784789969124</scale>
+          </mesh>
+        </geometry>
+        <material> <!-- Green -->
+          <ambient>0.0 0.5 0.0 1.0</ambient>
+          <diffuse>0.0 0.5 0.0 1.0</diffuse>
+          <specular>0.1 0.1 0.1 1.0</specular>
+        </material>
+      </visual>
+    </link>
+
+    <link name= berry_link_9 >
+      <pose> -0.16847829517748683 -0.0485391003052464 0.007221882892387107
+             0 0.0  -2.861085967605619</pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <sphere>
+            <radius>0.005000000000000001</radius>
+          </sphere>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/1002g.dae</uri>
+            <scale>0.1 0.1 0.1</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= calyx_link_9 >
+      <pose> -0.16847829517748683 -0.0485391003052464 0.007221882892387107
+             0 0.0 -2.861085967605619 </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/calyx8_1002.dae</uri>
+            <scale>0.1 0.1 0.1</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name=berry_dirt_joint_9 type="revolute">
+      <parent>dirt_link</parent>
+      <child>berry_stem_link_9</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <joint name=stem_to_calyx_joint_9 type="ball">
+      <parent> berry_link_9 </parent>
+      <child> calyx_link_9 </child>
+    </joint>
+
+    <joint name=stem_to_berry_joint_9 type="ball">
+      <parent> berry_stem_link_9 </parent>
+      <child> berry_link_9 </child>
+    </joint>
+
+  </model>
+</sdf>

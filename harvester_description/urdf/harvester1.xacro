@@ -1,0 +1,132 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xi="http://www.w3.org/2001/XInclude"
+	xmlns:gazebo="http://playerstage.sourceforge.net/gazebo/xmlschema/#gz"
+    xmlns:model="http://playerstage.sourceforge.net/gazebo/xmlschema/#model"
+	xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
+	xmlns:body="http://playerstage.sourceforge.net/gazebo/xmlschema/#body"
+    xmlns:geom="http://playerstage.sourceforge.net/gazebo/xmlschema/#geom"
+    xmlns:joint="http://playerstage.sourceforge.net/gazebo/xmlschema/#joint"
+	xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
+	xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
+	xmlns:rendering="http://playerstage.sourceforge.net/gazebo/xmlschema/#rendering"
+    xmlns:renderable="http://playerstage.sourceforge.net/gazebo/xmlschema/#renderable"
+    xmlns:physics="http://playerstage.sourceforge.net/gazebo/xmlschema/#physics"
+	xmlns:xacro="http://ros.org/wiki/xacro" name="j2s6s200">
+
+  <xacro:include filename="$(find harvester_description)/urdf/j2s6s200.xacro"/>
+	<xacro:include filename="$(find harvester_description)/urdf/harvester1.gazebo"/>
+	<xacro:include filename="$(find harvester_description)/urdf/harvester_common.xacro"/>
+
+	<!-- Properties for mounting robotic arm (relative to root)-->
+	<xacro:property name="arm_offset_x" value="0"/> <!-- 0.35 -->
+	<xacro:property name="arm_offset_y" value="-0.4"/> <!-- 0.35 -->
+	<xacro:property name="arm_offset_z" value="0"/> <!-- 0.9 -->
+	<xacro:property name="arm_rot_r" value="0"/> <!--"${-J_PI/2}"/>  -J_PI -->
+	<xacro:property name="arm_rot_p" value="0"/> <!-- "${-J_PI/2}"/> -->
+	<xacro:property name="arm_rot_y" value="0"/> <!-- "${J_PI/2}"/> -->
+
+	<!-- Properties for simulated camera lens -->
+	<xacro:property name="camera_radius" value="0.0005"/>
+
+	<!-- Positions for mounting camera base relative to end effector (mess with these!) -->
+	<xacro:property name="camera_mount_x" value="-0.025"/>
+	<xacro:property name="camera_mount_y" value="0"/>
+	<xacro:property name="camera_mount_z" value="-0.085"/>
+	<xacro:property name="camera_mount_r" value="${-J_PI/2}"/>
+	<xacro:property name="camera_mount_p" value="${J_PI}"/>
+	<xacro:property name="camera_mount_yaw" value="${J_PI/2}"/>
+
+	<!-- Camera viewing offset from camera base -->
+	<xacro:property name="camera_offset_x" value="-0.026"/> <!-- Abs -0.051 -->
+	<xacro:property name="camera_offset_y" value="0"/>
+	<xacro:property name="camera_offset_z" value="0.018"/> <!-- Abs -0.067 -->
+	<xacro:property name="camera_p" value="${-J_PI/2}"/>
+
+  <!-- Properties for working with camera meshes -->
+	<property name="camera_mesh" value="camera"/>
+
+  <link name="root">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size = "0.00001 0.00001 0.00001"/>
+      </geometry>
+    </visual>
+
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+	<box size = "0.00001 0.00001 0.00001"/>
+      </geometry>
+    </collision>
+  </link>
+
+	<!-- Mesh for camera appearance and physics -->
+	<joint name="camera_housing_joint" type="fixed">
+		<origin xyz="${camera_mount_x} ${camera_mount_y} ${camera_mount_z}"/>
+		<parent link="j2s6s200_end_effector"/>
+		<child link="camera_housing_link"/>
+	</joint>
+
+	<link name="camera_housing_link">
+		<collision>
+			<origin xyz="0 0 0" rpy="${camera_mount_r} ${camera_mount_p} ${camera_mount_yaw}"/>
+      <geometry>
+				<mesh filename="package://harvester_description/meshes/${camera_mesh}.dae"/>
+      </geometry>
+		</collision>
+
+		<visual>
+			<origin xyz="0 0 0" rpy="${camera_mount_r} ${camera_mount_p} ${camera_mount_yaw}"/>
+      <geometry>
+				<mesh filename="package://harvester_description/meshes/${camera_mesh}.dae"/>
+      </geometry>
+    </visual>
+
+	</link>
+
+	<!-- Actual sensing element modeled as virtual link -->
+	<joint name="camera_joint" type="fixed">
+		<origin xyz="${camera_offset_x} ${camera_offset_y} ${camera_offset_z}" rpy="0 ${camera_p} 0"/> 
+		<parent link="camera_housing_link"/>
+		<child link="camera_link"/>
+	</joint>
+
+	<link name="camera_link">
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="0.00001"/> 
+      </geometry>
+    </collision>
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+	<sphere radius="0.00001"/>
+      </geometry>
+    </visual>
+  </link>
+
+	<!-- Connect model to Gazebo world -->
+  <link name="world"/>
+
+  <joint name="connect_root_and_world" type="fixed">
+    <child link="root" />
+    <parent link="world" />
+		<origin xyz="0 0 0" rpy="0 0 0" />
+  </joint>
+
+	<link name="arm_mount"/>
+
+	<joint name="arm_attach" type="fixed">
+		<child link="arm_mount" />
+		<parent link="root" />
+		<origin xyz="${arm_offset_x} ${arm_offset_y} ${arm_offset_z}"
+			      rpy="${arm_rot_r} ${arm_rot_p} ${arm_rot_y}" />
+	</joint>
+
+	<xacro:j2s6s200  base_parent="arm_mount"/>
+
+</robot>

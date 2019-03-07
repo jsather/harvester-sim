@@ -1,0 +1,62 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="strawberry_world">
+
+    <gui>
+      <camera name="user_camera">
+        <pose>0.75 -0.75 0.423 0 0.3 2.356</pose>
+        <!-- <pose>1 -1 1 0 0.5 2.356</pose> -->
+      </camera>
+    </gui>
+    <!-- 0.642 -0.541 0.423 0 0.4 2.356 -->
+
+    <scene>
+      <sky>
+        <clouds>
+          <speed>12</speed>
+        </clouds>
+      </sky>
+      <grid>false</grid>
+    </scene>
+
+    <!-- <physics type="simbody">
+      <max_step_size>0.001</max_step_size>
+    </physics> -->
+
+    <physics name="ode_75iters" type="ode">
+      <real_time_update_rate>2500</real_time_update_rate>
+      <!-- <real_time_factor>2.0</real_time_factor> -->
+      <ode>
+        <solver>
+          <type>quick</type>
+          <iters>75</iters>
+        </solver>
+      </ode>
+      <!-- <real_time_update_rate>10000</real_time_update_rate>
+      <max_step_size>0.001</max_step_size> -->
+    </physics>
+
+    <include>
+      <uri>model://dirt_plane</uri>
+      <pose>0 0 -0.3 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://sun</uri>
+      <pose>0 100 0 0 0 0</pose>
+    </include>
+
+    <!-- Husky robot to which arm is mounted -->
+    <!-- <include>
+      <uri>model://husky</uri>
+      <pose>0.6 -0.15 0.15 0 0 0</pose>
+      <static>True</static>
+    </include> -->
+
+    <!-- Include strawberry bed. -->
+    <include>
+      <uri>model://bed</uri>
+      <pose>0 0.5737 -0.45 0 0 0</pose>
+    </include>
+  </world>
+</sdf>

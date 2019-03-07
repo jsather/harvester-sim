@@ -1,0 +1,15 @@
+<launch>
+  <arg name="kinova_robotName" default="j2s6s200"/>
+  <arg name="harvester_robotName" default="harvester1"/>
+
+  <!-- Load the URDF into the ROS Parameter Server -->
+  <param name="robot_description"
+    command="$(find xacro)/xacro --inorder '$(find harvester_description)/urdf/$(arg harvester_robotName).xacro'" />
+
+  <!-- Run a python script to the send a service call to gazebo_ros to spawn a URDF robot -->
+  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+    args="-urdf -model $(arg kinova_robotName) -param robot_description"/> 
+    <!-- args="-urdf -model $(arg kinova_robotName) -param robot_description -J j2s6s200_joint_1 -1.5 -J j2s6s200_joint_2 2.89 -J j2s6s200_joint_3 4.67 -J j2s6s200_joint_4 6.14 -J j2s6s200_joint_5 1.76 -J j2s6s200_joint_6 4.85 -J j2s6s200_joint_finger_1 0.2 -J j2s6s200_joint_finger_2 0.2 "/> -->
+    <!-- args="-urdf -model $(arg kinova_robotName) -param robot_description -J j2s6s200_joint_1 -1.5 -J j2s6s200_joint_2 2.89 -J j2s6s200_joint_3 4.67 -J j2s6s200_joint_4 6.14 -J j2s6s200_joint_5 1.76 -J j2s6s200_joint_6 4.85 -J j2s6s200_joint_finger_1 0.2 -J j2s6s200_joint_finger_2 0.2 "/> -->
+    <!-- args="-urdf -model $(arg kinova_robotName) -param robot_description -J j2s6s200_joint_1 0.0 j2s6s200_joint_2 2.9 j2s6s200_joint_3 1.3 j2s6s200_joint_4 4.2 j2s6s200_joint_5 1.4 j2s6s200_joint_6 0.0"/> -->
+</launch>

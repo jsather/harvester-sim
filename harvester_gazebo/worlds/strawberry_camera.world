@@ -1,0 +1,99 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="strawberry_camera_world">
+
+    <scene>
+      <sky>
+        <clouds>
+          <speed>12</speed>
+        </clouds>
+      </sky>
+      <grid>false</grid>
+    </scene>
+
+    <model name="camera_model">
+        <static>true</static>
+        <pose>0.5 -0.5 0.6 0 0.526 2.356</pose>
+        <link name="camera_link">
+            <sensor type="camera" name="camera2">
+                <update_rate>30.0</update_rate>
+                <camera name="head">
+                    <!-- <horizontal_fov>1</horizontal_fov> -->
+                    <horizontal_fov>1.3962634</horizontal_fov>
+                    <image>
+                        <width>800</width>
+                        <height>800</height>
+                        <format>R8G8B8</format>
+                    </image>
+                    <clip>
+                        <near>0.02</near>
+                        <far>300</far>
+                    </clip>
+                    <!-- <noise>
+                        <type>gaussian</type>
+                        <mean>0.0</mean>
+                        <stddev>0.007</stddev>
+                    </noise> -->
+                </camera>
+                <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+                    <alwaysOn>true</alwaysOn>
+                    <updateRate>0.0</updateRate>
+                    <cameraName>harvester/camera2</cameraName>
+                    <imageTopicName>image_raw</imageTopicName>
+                    <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+                    <frameName>camera_link_optical</frameName>
+                    <!-- setting hackBaseline to anything but 0.0 will cause a misalignment
+                        between the gazebo sensor image and the frame it is supposed to
+                        be attached to -->
+                    <hackBaseline>0.0</hackBaseline>
+                    <distortionK1>0.0</distortionK1>
+                    <distortionK2>0.0</distortionK2>
+                    <distortionK3>0.0</distortionK3>
+                    <distortionT1>0.0</distortionT1>
+                    <distortionT2>0.0</distortionT2>
+                    <CxPrime>0</CxPrime>
+                    <Cx>0.0</Cx>
+                    <Cy>0.0</Cy>
+                    <focalLength>0.0</focalLength>
+                </plugin>
+            </sensor>
+        </link>
+    </model>
+
+    <physics name="ode_75iters" type="ode">
+      <real_time_update_rate>2500</real_time_update_rate>
+      <!-- <real_time_factor>2.0</real_time_factor> -->
+      <ode>
+        <solver>
+          <type>quick</type>
+          <iters>75</iters>
+        </solver>
+      </ode>
+      <!-- <real_time_update_rate>10000</real_time_update_rate>
+      <max_step_size>0.001</max_step_size> -->
+    </physics>
+
+    <include>
+      <uri>model://dirt_plane</uri>
+      <pose>0 0 -0.3 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://sun</uri>
+      <pose>0 100 0 0 0 0</pose>
+    </include>
+
+    <!-- Husky robot to which arm is mounted -->
+    <!-- <include>
+      <uri>model://husky</uri>
+      <pose>0.6 -0.15 0.15 0 0 0</pose>
+      <static>True</static>
+    </include> -->
+
+    <!-- Include strawberry bed. -->
+    <include>
+      <uri>model://bed</uri>
+      <pose>0 0.5737 -0.45 0 0 0</pose>
+    </include>
+  </world>
+</sdf>

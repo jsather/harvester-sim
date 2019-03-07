@@ -1,0 +1,499 @@
+<?xml version="1.0" ?>
+<%
+# Future additions:
+#   1. Add "cluster" parameters that generates cluster berries by some prob.
+#   2. Keep brainstorming!
+# Bug fixes:
+#   1. 9/21/18: Pitch of -pi/2 caused spawning of plant with different yaw than expected. 
+#               Changed -pi/2 to slightly greater value. Not sure root cause.
+
+require 'rubystats'
+
+outfile = File.open("berry_data.txt", "w")
+logfile = File.open("logfile.txt", "w")
+
+# Berries
+# Constants
+berry_stem_length = 0.6
+berry_base_radius = 0.05
+berry_center_to_stem = 0.035
+berry_scale_const = 0.4
+calyx_offsets = []
+max_collision_attempts = 50
+min_pitch = 0.01 # bug fix
+
+# Set up random number generators
+# Num berries
+berry_num_ripe_gen = Rubystats::NormalDistribution.new(4, 1)
+berry_num_unripe_gen = Rubystats::NormalDistribution.new(3, 1)
+berry_num_green_gen = Rubystats::NormalDistribution.new(3, 1)
+
+# Berry orientation
+stem_p_gen = Rubystats::NormalDistribution.new(-0.075, 0.02)
+berry_y_gen = Rubystats::UniformDistribution.new(-Math::PI, Math::PI)
+calyx_offset_y_gen = Rubystats::NormalDistribution.new(0.0, 0.1)
+
+# Berry scales
+berry_scale_noise_gen = Rubystats::NormalDistribution.new(0.0, 0.05)
+berry_stem_scale_gen = Rubystats::NormalDistribution.new(0.3, 0.075) # 0.3, 0.0
+
+# Berry ripeness
+berry_ripe_val_gen = Rubystats::UniformDistribution.new(-0.499, 1.499)
+berry_unripe_val_gen = Rubystats::UniformDistribution.new(-0.499, 3.499)
+berry_scale_g_gen = Rubystats::UniformDistribution.new(0.10, 0.30)
+berry_scale_u0_gen = Rubystats::UniformDistribution.new(0.30, 0.80)
+berry_scale_u1_gen = Rubystats::UniformDistribution.new(0.35, 0.85)
+berry_scale_u2_gen = Rubystats::UniformDistribution.new(0.40, 0.90)
+berry_scale_u3_gen = Rubystats::UniformDistribution.new(0.45, 0.95)
+berry_scale_r0_gen = Rubystats::UniformDistribution.new(0.60, 1.0)
+berry_scale_r1_gen = Rubystats::UniformDistribution.new(0.65, 1.0)
+
+# Berry and calyx 3D models
+berry_model_gen = Rubystats::UniformDistribution.new(999.5, 1004.499)
+calyx_model_gen = Rubystats::UniformDistribution.new(0.5, 6.499)
+green_calyx_model_gen = Rubystats::UniformDistribution.new(6.5, 10.499)
+
+# Initialize arrays
+berry_pose = Array.new
+berry_scale = Array.new
+berry_stem_scale = Array.new
+berry_ripe = Array.new
+berry_ripe_code = Array.new
+berry_model = Array.new
+calyx_model = Array.new
+stem_p = Array.new
+
+# Sample
+num_berry_ripe = [0, (berry_num_ripe_gen.rng).to_i].max
+num_berry_unripe = [0, (berry_num_unripe_gen.rng).to_i].max
+num_berry_green = [0, (berry_num_green_gen.rng).to_i].max
+
+# Generate berries
+berry_no = 0
+num_berry_total = num_berry_ripe + num_berry_unripe + num_berry_green
+
+while berry_no < num_berry_total
+  if berry_no < num_berry_ripe
+    berry_ripe.push true
+    berry_ripe_code.push ('r' + ((berry_ripe_val_gen.rng).round).to_s)
+  elsif berry_no < (num_berry_ripe + num_berry_unripe)
+    berry_ripe.push false
+    berry_ripe_code.push ('u' + ((berry_unripe_val_gen.rng).round).to_s)
+  else
+    berry_ripe.push false
+    berry_ripe_code.push 'g'
+  end
+
+  case berry_ripe_code[-1]
+  when 'r0'
+    scale = berry_scale_const*berry_scale_r0_gen.rng + berry_scale_noise_gen.rng
+    calyx_model.push ((calyx_model_gen.rng).round).to_s
+  when 'r1'
+    scale = berry_scale_const*berry_scale_r1_gen.rng + berry_scale_noise_gen.rng
+    calyx_model.push ((calyx_model_gen.rng).round).to_s
+  when 'u0'
+    scale = berry_scale_const*berry_scale_u0_gen.rng + berry_scale_noise_gen.rng
+    calyx_model.push ((calyx_model_gen.rng).round).to_s
+  when 'u1'
+    scale = berry_scale_const*berry_scale_u1_gen.rng + berry_scale_noise_gen.rng
+    calyx_model.push ((calyx_model_gen.rng).round).to_s
+  when 'u2'
+    scale = berry_scale_const*berry_scale_u2_gen.rng + berry_scale_noise_gen.rng
+    calyx_model.push ((calyx_model_gen.rng).round).to_s
+  when 'u3'
+    scale = berry_scale_const*berry_scale_u3_gen.rng + berry_scale_noise_gen.rng
+    calyx_model.push ((calyx_model_gen.rng).round).to_s
+  when 'g'
+    scale = berry_scale_const*berry_scale_g_gen.rng + berry_scale_noise_gen.rng
+    calyx_model.push ((green_calyx_model_gen.rng).round).to_s
+  else
+    debug_message = "Invalid ripe code: #{berry_ripe_code[-1]}."
+    logfile.syswrite(debug_message + "\n")
+  end
+
+  berry_scale.push [0.1, scale].max
+  berry_model.push ((berry_model_gen.rng).round).to_s
+
+  # Generate berry pose
+  attempt = 0
+  while true # Iterate until collision avoidance heuristic satisfied
+    b_stem_scale = berry_stem_scale_gen.rng
+    stem_length = b_stem_scale * berry_stem_length
+    offset = scale * berry_center_to_stem
+    r_cur = scale * berry_base_radius
+
+    r = 0
+    s_p = stem_p_gen.rng
+    yaw = berry_y_gen.rng
+    z = (stem_length + offset)*Math.sin(-s_p)
+    if z < r_cur # Correct "submerged" strawberries
+      z = r_cur
+      s_p = -Math.asin(z/(stem_length + offset))
+    end
+
+    if z < 2*r_cur # Add appropriate downward tilt to berry, assuming spherical
+      p = [Math.asin((z - r_cur)/r_cur), min_pitch].max  # bug fix
+    else
+      p = Math::PI/2 
+    end
+
+    x = (stem_length + offset)*Math.cos(yaw)*Math.cos(-s_p) -
+        r_cur*(1 - Math.cos(p))*Math.cos(yaw)
+    y = (stem_length + offset)*Math.sin(yaw)*Math.cos(-s_p) -
+        r_cur*(1 - Math.cos(p))*Math.sin(yaw)
+    z = z - r_cur*Math.sin(p)
+    pose = [x, y, z, r, p, yaw]
+
+    overlap = false
+    i = 0
+    for pose_prev in berry_pose do
+      r_prev = berry_scale[i] * berry_base_radius
+      min_dist = r_cur + r_prev
+
+      delta_x = pose_prev[0] - x
+      delta_y = pose_prev[1] - y
+      delta_z = pose_prev[2] - z
+      dist = Math.sqrt(delta_x**2 + delta_y**2 + delta_z**2)
+
+      if dist < min_dist # Collision avoidance heuristic
+        overlap = true
+        break
+      end
+
+      i += 1
+    end
+
+    attempt += 1
+    break if overlap == false
+    break if attempt >= max_collision_attempts
+  end
+
+  if overlap
+    message = "Could not place new berry without collision. \
+Generated #{berry_no} of #{num_berry_total} berries."
+    logfile.syswrite(message + "\n")
+    num_berry_total = berry_no
+    break
+  end
+
+  stem_p.push s_p
+  berry_pose.push pose
+  berry_stem_scale.push b_stem_scale
+
+  berry_no += 1
+end
+
+# Leaves
+# Constants
+leaf_stem_length = 0.6
+leaf_offset_y_ref = [-Math::PI/2, 0, Math::PI/2]
+
+# Set up random number generators
+# Num leaf stems
+leaf_num_stem_gen = Rubystats::NormalDistribution.new(5, 1) 
+
+# Leaf orientation
+leaf_p_gen = Rubystats::UniformDistribution.new(-5*Math::PI/12, -3*Math::PI/32)
+leaf_y_gen = Rubystats::UniformDistribution.new(-Math::PI, Math::PI)
+leaf_offset_y_gen = Rubystats::NormalDistribution.new(0.0, 0.1)
+
+# Leaf scales
+leaf_scale_gen = Rubystats::NormalDistribution.new(0.55, 0.1)
+leaf_stem_scale_gen = Rubystats::NormalDistribution.new(0.3, 0.075) #0.05
+
+# Leaf 3D model
+leaf_model_gen = Rubystats::UniformDistribution.new(0.5, 5.499)
+
+# Initialize arrays
+leaf_ps = Array.new
+leaf_ys = Array.new
+leaf_offset_ys = Array.new
+leaf_scales = Array.new
+leaf_stem_scales = Array.new
+leaf_models = Array.new
+
+# Sample
+num_leaf_stems = leaf_num_stem_gen.rng
+num_leaf_stems = num_leaf_stems.to_i
+
+leaf_stem_no = 0
+
+while leaf_stem_no < num_leaf_stems
+  leaf_stem_no = leaf_stem_no + 1
+
+  leaf_ps.push leaf_p_gen.rng
+  leaf_ys.push leaf_y_gen.rng
+  y1 = leaf_offset_y_ref[0] + leaf_offset_y_gen.rng
+  y2 = leaf_offset_y_ref[1] + leaf_offset_y_gen.rng
+  y3 = leaf_offset_y_ref[2] + leaf_offset_y_gen.rng
+  leaf_offset_ys.push [y1, y2, y3]
+
+  leaf_scales.push leaf_scale_gen.rng
+  leaf_stem_scales.push leaf_stem_scale_gen.rng
+
+  models = leaf_model_gen.rng(3)
+  leaf_models.push models.map{|m| m = m.round}
+end
+%>
+
+<sdf version="1.6">
+  <model name="strawb_plant">
+    <static>true</static>
+
+    <link name="dirt_link">
+      <inertial>
+        <mass>10</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+    </link>
+
+    <joint name="fixed to ground" type="revolute">
+      <parent>world</parent>
+      <child>dirt_link</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+<% # Generate leaf structures
+   i = 0
+   while i < num_leaf_stems
+     i = i + 1
+     stem_link = "leaf_stem_link_" + i.to_s
+     leaf_link = "leaf_link_" + i.to_s
+     leaf_joint = "stem_to_berry_joint_" + i.to_s
+     dirt_joint = "leaf_dirt_joint_" + i.to_s
+
+     leaf_p = leaf_ps[i-1]
+     leaf_y = leaf_ys[i-1]
+     leaf_scale = leaf_scales[i-1]
+     stem_scale = leaf_stem_scales[i-1]
+     stem_length = stem_scale * leaf_stem_length
+
+     if leaf_p.abs < Math::PI/4
+       stem_model_name = "leaf_stem1.stl"
+     else
+       stem_model_name = "leaf_stem2.stl"
+     end
+%>
+    <link name= <%= stem_link %> >
+      <pose>0 0 0 0 <%=leaf_p%> <%=leaf_y%> </pose>
+      <inertial>
+        <mass>1</mass>
+        <inertia> <!-- Modeled as slender rod -->
+          <ixx>1e-3</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.333e-2</iyy>
+          <iyz>0</iyz>
+          <izz>8.333e-2</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/<%=stem_model_name%></uri>
+            <scale> <%=stem_scale%> <%=stem_scale%> <%=stem_scale%></scale>
+          </mesh>
+        </geometry>
+        <material> <!-- Green -->
+          <ambient>0.0 0.5 0.0 1.0</ambient>
+          <diffuse>0.0 0.5 0.0 1.0</diffuse>
+          <specular>0.1 0.1 0.1 1.0</specular>
+        </material>
+      </visual>
+    </link>
+<%    leaf_offset_ys[i-1].each_with_index do |offset, j|
+        leaf_link_full = leaf_link + "_" + j.to_s 
+%>
+    <link name= <%= leaf_link_full %> >
+      <pose> <%= stem_length*Math.cos(leaf_y)*Math.cos(-leaf_p) %>
+             <%= stem_length*Math.sin(leaf_y)*Math.cos(-leaf_p) %>
+             <%= stem_length*Math.sin(-leaf_p) %> <%=0%>
+             <%=0%> <%=leaf_y + offset%>  </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/leaf<%=leaf_models[i-1][j]%>.dae</uri>
+            <scale> <%=leaf_scale%> <%=leaf_scale%> <%=leaf_scale%></scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+<%    end %>
+
+    <joint name=<%= dirt_joint %> type="revolute">
+      <parent>dirt_link</parent>
+      <child><%= stem_link %></child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+<% end %>
+<% # Generate berry structures
+   i = 0
+   while i < num_berry_total
+     i = i + 1
+     stem_link = "berry_stem_link_" + i.to_s
+     calyx_link = "calyx_link_" + i.to_s
+     calyx_joint = "stem_to_calyx_joint_" + i.to_s
+     berry_link = "berry_link_" + i.to_s
+     berry_joint = "stem_to_berry_joint_" + i.to_s
+     dirt_joint = "berry_dirt_joint_" + i.to_s
+
+     berry_model_name = berry_model[i-1] + berry_ripe_code[i-1] + ".dae"
+     calyx_model_name = "calyx" + calyx_model[i-1] + "_"+ berry_model[i-1] + ".dae"
+
+     scale = berry_scale[i-1]
+     ripe = berry_ripe[i-1]
+     stem_scale = berry_stem_scale[i-1]
+     stem_length = stem_scale * berry_stem_length
+     berry_radius = scale * berry_base_radius
+
+     berry_x = berry_pose[i-1][0]
+     berry_y_ = berry_pose[i-1][1]
+     berry_z = berry_pose[i-1][2]
+     berry_r = berry_pose[i-1][3]
+     berry_p = berry_pose[i-1][4]
+     berry_y = berry_pose[i-1][5]
+     s_p = stem_p[i-1]
+
+     top_height = berry_z + berry_radius*Math.sin(berry_p)
+
+     if top_height == berry_radius # Choose stem type based on berry height and radius
+       stem_model_name = "strawb_stem1.stl"
+     elsif top_height < 2*berry_radius
+       stem_model_name = "strawb_stem2.stl"
+     else
+       stem_model_name = "strawb_stem3.stl"
+     end
+
+     strawb_data = [[berry_x, berry_y_, berry_z, berry_r, berry_p, berry_y],
+       berry_radius, ripe]
+     outfile.syswrite(strawb_data.to_s + "\n")
+%>
+    <link name= <%= stem_link%> >
+      <pose>0 0 0 0 <%= s_p %> <%= berry_y %></pose>
+      <inertial>
+        <mass>1</mass>
+        <inertia> <!-- Modeled as slender rod -->
+          <ixx>1e-3</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.333e-2</iyy>
+          <iyz>0</iyz>
+          <izz>8.333e-2</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/<%=stem_model_name%></uri>
+            <scale><%=stem_scale %> <%= stem_scale %> <%= stem_scale %></scale>
+          </mesh>
+        </geometry>
+        <material> <!-- Green -->
+          <ambient>0.0 0.5 0.0 1.0</ambient>
+          <diffuse>0.0 0.5 0.0 1.0</diffuse>
+          <specular>0.1 0.1 0.1 1.0</specular>
+        </material>
+      </visual>
+    </link>
+
+    <link name= <%= berry_link %> >
+      <pose> <%= berry_x %> <%= berry_y_ %> <%= berry_z %>
+             <%= berry_r %> <%=-Math::PI/2 + berry_p%>  <%= berry_y %></pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <sphere>
+            <radius><%= berry_radius %></radius>
+          </sphere>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/<%=berry_model_name%></uri>
+            <scale><%= scale %> <%= scale %> <%= scale %></scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name= <%= calyx_link %> >
+      <pose> <%= berry_x %> <%= berry_y_ %> <%= berry_z %>
+             <%= berry_r %> <%= -Math::PI/2 + berry_p%> <%= berry_y %> </pose>
+      <inertial>
+        <mass>0.018</mass>
+        <inertia>
+          <ixx>8.82e-6</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.82e-6</iyy>
+          <iyz>0</iyz>
+          <izz>8.82e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://random_strawberry_plant/meshes/<%= calyx_model_name %></uri>
+            <scale><%= scale %> <%= scale %> <%= scale %></scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name=<%= dirt_joint %> type="revolute">
+      <parent>dirt_link</parent>
+      <child><%= stem_link %></child>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <joint name=<%= calyx_joint %> type="ball">
+      <parent> <%= berry_link %> </parent>
+      <child> <%= calyx_link %> </child>
+    </joint>
+
+    <joint name=<%= berry_joint %> type="ball">
+      <parent> <%= stem_link %> </parent>
+      <child> <%= berry_link %> </child>
+    </joint>
+<%
+   end
+   outfile.close
+   logfile.close
+%>
+  </model>
+</sdf>

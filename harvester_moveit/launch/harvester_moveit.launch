@@ -1,0 +1,27 @@
+<launch>
+  <arg name="debug" default="false" />
+  <arg name="use_gui" default="false" />
+  <arg name="allow_trajectory_execution" value="true"/>
+  <arg name="fake_execution" value="false"/>
+  <arg name="info" value="true"/>
+  <arg name="joint_states_ns" value="/j2s6s200/joint_states"/>
+  <arg name="controller_manager" value="j2s6s200_ros_control"/>
+
+  <!-- Load the URDF, SRDF and other .yaml configuration files on the param server -->
+  <include file="$(find harvester_moveit)/launch/planning_context.launch">
+    <arg name="load_robot_description" value="true"/>
+  </include>
+
+  <!-- Run the main MoveIt executable without trajectory execution (we do not have controllers configured by default) -->
+  <include file="$(find harvester_moveit)/launch/move_group.launch">
+    <arg name="allow_trajectory_execution" value="$(arg allow_trajectory_execution)"/>
+    <arg name="fake_execution" value="$(arg fake_execution)"/>
+    <arg name="info" value="$(arg info)"/>
+    <arg name="debug" value="$(arg debug)"/>
+    <arg name="joint_states_ns" value="$(arg joint_states_ns)"/>
+    <arg name="controller_manager" value="$(arg controller_manager)"/>
+  </include>
+
+  <!-- ros-control Controller parameters-->
+  <rosparam file="$(find harvester_moveit)/config/controllers_ros_control.yaml"/>
+</launch>

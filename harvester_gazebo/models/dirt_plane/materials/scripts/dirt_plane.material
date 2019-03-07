@@ -1,0 +1,19 @@
+material DirtPlane/Image
+{
+  technique
+  {
+    pass
+    {
+      ambient 1 1 1 1.000000
+      diffuse 1 1 1 1.000000
+      specular 0.03 0.03 0.03 1.000000
+      emissive 0.900000 0.900000 0.900000 1.000000
+
+      texture_unit
+      {
+        texture dirt_texture.png
+        scale 0.05 0.05
+      }
+    }
+  }
+}

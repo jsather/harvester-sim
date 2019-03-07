@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>harvester_description</name>
+  <version>0.0.0</version>
+  <description>
+    3D model of harvester robot.
+    Includes the model and URDF files for working with robot in RViz or Gazebo.
+  </description>
+
+  <maintainer email="jonathon.sather@gmail.com">Jonathon Sather</maintainer>
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <!-- <build_depend>kinova_description</build_depend>
+  <build_export_depend>kinova_description</build_export_depend>
+  <exec_depend>kinova_description</exec_depend> -->
+
+  <export>
+    <!-- Other tools can request additional information be placed here -->
+  </export>
+</package>

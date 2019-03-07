@@ -1,0 +1,32 @@
+<launch>
+  <arg name="kinova_robotName" default="j2s6s200"/>
+  <arg name="harvester_robotName" default="harvester1"/>
+  <arg name="stopped" default="false"/>
+
+  <!-- Load joint controller configurations from YAML file to parameter server -->
+  <rosparam file="$(find harvester_control)/config/$(arg kinova_robotName)_control.yaml" command="load"/>
+
+  <!-- Load trajectory controllers -->
+  <group if="$(arg stopped)">
+    <node name="$(arg kinova_robotName)_trajectory_controller" pkg="controller_manager" type="spawner"
+      output="screen" ns="$(arg kinova_robotName)"
+      args="--stopped
+            effort_joint_trajectory_controller
+            effort_finger_trajectory_controller
+            joint_state_controller"/>
+  </group>
+
+  <group unless="$(arg stopped)">
+    <node name="$(arg kinova_robotName)_trajectory_controller" pkg="controller_manager" type="spawner"
+      output="screen" ns="$(arg kinova_robotName)"
+      args="effort_joint_trajectory_controller
+            effort_finger_trajectory_controller
+            joint_state_controller"/>
+  </group>
+
+  <!-- Convert joint states to TF transforms for rviz, etc -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+        respawn="false" output="screen">
+  </node>
+
+</launch>
