@@ -6,13 +6,13 @@ Virtual harvesting environment using ROS and Gazebo. Originally used by Jonathon
 This stack is a fork of [kinova-ros](https://github.com/Kinovarobotics/kinova-ros) that includes a simulated strawberry world with a procedurally generated strawberry plant. 
 
 ## Supported versions
-This package has been tested on ROS Kinetic with Gazebo 7.1.0 on Ubuntu 64-bit 16.04. The full tested configuration can be found in this [Dockerfile](https://github.com/jsather/harvester-docker/blob/master/harvester_project_build/Dockerfile).
+This package has been tested on ROS Kinetic with Gazebo 7.1.0 on Ubuntu 64-bit 16.04. The full tested configuration, including dependencies, can be found in this [Dockerfile](https://github.com/jsather/harvester-docker/blob/master/harvester_project_build/Dockerfile).
 
 ## File System
- - harvester_contol: Launch file to start harvester controllers 
- - harvester_description: Where the meshes and URDF specifications live
- - harvester_gazebo: Launch file to start harvester gazebo world. Also includes world sdf files
- - harvester_moveit: Launch file for MoveIt drivers
+ - `harvester_contol`: Launch file to start harvester controllers 
+ - `harvester_description`: Where the meshes and URDF specifications live
+ - `harvester_gazebo`: Launch file to start harvester gazebo world. Also includes world sdf files
+ - `harvester_moveit`: Launch file for MoveIt drivers
  
 ## Installation
 Clone the repo into your [catkin workspace](http://wiki.ros.org/catkin/Tutorials/create_a_workspace) and build using catkin_make.
