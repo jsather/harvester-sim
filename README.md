@@ -1,7 +1,7 @@
 # harvester-sim
 ![harvester-gif](https://imgur.com/0dghLur.gif)
 
-Virtual harvesting environment using ROS and Gazebo. Originally used by Jonathon Sather in his research on viewpoint optimization for autonomous harvesting. [preprint](https://arxiv.org/abs/1903.02074) [video summary](https://youtu.be/C6hrCVv2B-o)
+Virtual harvesting environment using ROS and Gazebo. Originally used by Jonathon Sather in his research on viewpoint optimization for autonomous harvesting. ([preprint](https://arxiv.org/abs/1903.02074)) ([video summary](https://youtu.be/C6hrCVv2B-o))
 
 This stack is a fork of [kinova-ros](https://github.com/Kinovarobotics/kinova-ros) that includes a simulated strawberry world with a procedurally generated strawberry plant. 
 
@@ -24,11 +24,11 @@ catkin_make
 source devel/setup.bash
 ```
 
-Update GAZEBO_RESOURCE_PATH and GAZEBO_MODEL_PATH to include harvester_gazebo and harvester_gazebo/models, respectively.
+Update Gazebo shell variables. 
 
 ```
 export GAZEBO_RESOURCE_PATH=~/catkin_ws/src/harvester-ros/harvester_gazebo:$GAZEBO_RESOURCE_PATH
-export GAZEBO_MODEL_PATH=~/catkin_ws/src/harvester-ros/harvester_gazebo/models:$GAZEBO_MODEL_PATH"
+export GAZEBO_MODEL_PATH=~/catkin_ws/src/harvester-ros/harvester_gazebo/models:$GAZEBO_MODEL_PATH
 ```
 
 ## Running the Simulated Environment
