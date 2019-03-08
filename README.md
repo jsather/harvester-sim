@@ -37,7 +37,7 @@ Run harvester_test.launch to spawn arm and randomly generated plant.
 roslaunch harvester_gazebo harvester_test.launch
 ```
 
-![env](https://imgur.com/c1So1YB)
+![env](https://imgur.com/c1So1YB.jpg)
 
 After testing, interface with [harvester-python](https://github.com/jsather/harvester-python) or your own agent.
 
