@@ -50,7 +50,7 @@ After testing, interface with [harvester-python](https://github.com/jsather/harv
 * **Jonathon Sather** 
 
 ## License
-This project is licensed under the MIT license - see [LICENSE](LICENSE) for details.
+This project is licensed under the BSD 2-CLAUSE - see [LICENSE](LICENSE) for details.
 
 ## Acknowledgments
 * harvester-ros based off of [kinova-ros](https://github.com/Kinovarobotics/kinova-ros)
