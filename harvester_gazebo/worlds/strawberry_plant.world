@@ -1,0 +1,60 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="strawberry_plant">
+
+    <gui>
+      <camera name="user_camera">
+        <pose>1.5 -1.5 1 0 0.4 2.356</pose>
+      </camera>
+    </gui>
+
+    <scene>
+      <sky>
+        <clouds>
+          <speed>12</speed>
+        </clouds>
+      </sky>
+      <grid>false</grid>
+    </scene>
+
+    <physics name="ode_75iters" type="ode">
+      <real_time_update_rate>2500</real_time_update_rate>
+      <ode>
+        <solver>
+          <type>quick</type>
+          <iters>75</iters>
+        </solver>
+      </ode>
+    </physics>
+
+    <include>
+      <uri>model://dirt_plane</uri>
+      <pose>0 0 -0.3 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://sun</uri>
+      <pose>0 100 0 0 0 0</pose>
+    </include>
+
+    <!-- Husky robot to which arm is mounted -->
+    <!-- <include>
+      <uri>model://husky</uri>
+      <pose>0.6 -0.15 0.15 0 0 0</pose>
+      <static>True</static>
+    </include> -->
+
+    <!-- Include strawberry bed. -->
+    <include>
+      <uri>model://bed</uri>
+      <pose>0 0.5737 -0.45 0 0 0</pose>
+    </include>
+
+    <!-- Place plant on bed. -->
+    <include>
+      <uri>model://random_strawberry_plant</uri>
+      <pose>0 0 0 0 0 0</pose> 
+    </include> 
+
+  </world>
+</sdf>
