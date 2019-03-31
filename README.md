@@ -27,8 +27,8 @@ source devel/setup.bash
 Update Gazebo shell variables. 
 
 ```
-export GAZEBO_RESOURCE_PATH=~/catkin_ws/src/harvester-ros/harvester_gazebo:$GAZEBO_RESOURCE_PATH
-export GAZEBO_MODEL_PATH=~/catkin_ws/src/harvester-ros/harvester_gazebo/models:$GAZEBO_MODEL_PATH
+export GAZEBO_RESOURCE_PATH=~/catkin_ws/src/harvester-sim/harvester_gazebo:$GAZEBO_RESOURCE_PATH
+export GAZEBO_MODEL_PATH=~/catkin_ws/src/harvester-sim/harvester_gazebo/models:$GAZEBO_MODEL_PATH
 ```
 
 ## Running the Simulated Environment
@@ -36,10 +36,15 @@ Run harvester_test.launch to spawn arm and randomly generated plant.
 ``` 
 roslaunch harvester_gazebo harvester_test.launch
 ```
+![env](https://imgur.com/J0Mert7.jpg)
 
-![env](https://imgur.com/c1So1YB.jpg)
+The camera view can be seen on the RQT image viewer. 
+```
+rqt
+```
+![rqt](https://imgur.com/LFBCUxW.jpg)
 
-After testing, interface with [harvester-python](https://github.com/jsather/harvester-python) or your own agent.
+After testing, interface with [harvester-python](https://github.com/jsather/harvester-python) or your own agent. See havester-python for more details.
 
 ## Built With
 * [Gazebo](http://gazebosim.org) - Physics simulator
@@ -53,4 +58,4 @@ After testing, interface with [harvester-python](https://github.com/jsather/harv
 This project is licensed under the BSD 2-CLAUSE - see [LICENSE](LICENSE) for details.
 
 ## Acknowledgments
-* harvester-ros based off of [kinova-ros](https://github.com/Kinovarobotics/kinova-ros)
+* harvester-sim based off of [kinova-ros](https://github.com/Kinovarobotics/kinova-ros)
