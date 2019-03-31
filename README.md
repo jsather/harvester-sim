@@ -27,8 +27,8 @@ source devel/setup.bash
 Update Gazebo shell variables. 
 
 ```
-export GAZEBO_RESOURCE_PATH=~/catkin_ws/src/harvester-ros/harvester_gazebo:$GAZEBO_RESOURCE_PATH
-export GAZEBO_MODEL_PATH=~/catkin_ws/src/harvester-ros/harvester_gazebo/models:$GAZEBO_MODEL_PATH
+export GAZEBO_RESOURCE_PATH=~/catkin_ws/src/harvester-sim/harvester_gazebo:$GAZEBO_RESOURCE_PATH
+export GAZEBO_MODEL_PATH=~/catkin_ws/src/harvester-sim/harvester_gazebo/models:$GAZEBO_MODEL_PATH
 ```
 
 ## Running the Simulated Environment
@@ -53,4 +53,4 @@ After testing, interface with [harvester-python](https://github.com/jsather/harv
 This project is licensed under the BSD 2-CLAUSE - see [LICENSE](LICENSE) for details.
 
 ## Acknowledgments
-* harvester-ros based off of [kinova-ros](https://github.com/Kinovarobotics/kinova-ros)
+* harvester-sim based off of [kinova-ros](https://github.com/Kinovarobotics/kinova-ros)
