@@ -1,5 +1,9 @@
 # harvester-sim
+<img src="https://imgur.com/0dghLur.gif" width="480">
+
+
 ![harvester-gif](https://imgur.com/0dghLur.gif)
+
 
 Virtual harvesting environment using ROS and Gazebo. Originally used by Jonathon Sather in his research on viewpoint optimization for autonomous harvesting. ([preprint](https://arxiv.org/abs/1903.02074)) ([video summary](https://youtu.be/C6hrCVv2B-o))
 
@@ -42,7 +46,7 @@ The camera view can be seen on the RQT image viewer.
 ```
 rqt
 ```
-![rqt](https://imgur.com/LFBCUxW.jpg)
+<img src="https://imgur.com/LFBCUxW.jpg" width="480">
 
 After testing, interface with [harvester-python](https://github.com/jsather/harvester-python) or your own agent. See havester-python for more details.
 
