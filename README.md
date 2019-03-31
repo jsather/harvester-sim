@@ -1,10 +1,6 @@
 # harvester-sim
 <img src="https://imgur.com/0dghLur.gif" width="480">
 
-
-![harvester-gif](https://imgur.com/0dghLur.gif)
-
-
 Virtual harvesting environment using ROS and Gazebo. Originally used by Jonathon Sather in his research on viewpoint optimization for autonomous harvesting. ([preprint](https://arxiv.org/abs/1903.02074)) ([video summary](https://youtu.be/C6hrCVv2B-o))
 
 This stack is a fork of [kinova-ros](https://github.com/Kinovarobotics/kinova-ros) that includes a simulated strawberry world with a procedurally generated strawberry plant. 
