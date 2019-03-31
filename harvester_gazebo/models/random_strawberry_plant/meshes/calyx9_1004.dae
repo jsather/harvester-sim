@@ -103,19 +103,19 @@
   </library_lights>
   <library_images>
     <image id="calyx_closeup_jpg_011" name="calyx_closeup_jpg_011">
-      <init_from>calyx_closeup.jpg.011.jpg</init_from>
+      <init_from>calyx_closeup.jpg</init_from>
     </image>
     <image id="calyx_closeup_jpg_010" name="calyx_closeup_jpg_010">
-      <init_from>calyx_closeup.jpg.010.jpg</init_from>
+      <init_from>calyx_closeup.jpg</init_from>
     </image>
     <image id="calyx_closeup_jpg_009" name="calyx_closeup_jpg_009">
-      <init_from>calyx_closeup.jpg.009.jpg</init_from>
+      <init_from>calyx_closeup.jpg</init_from>
     </image>
     <image id="calyx_closeup_jpg_006" name="calyx_closeup_jpg_006">
-      <init_from>calyx_closeup.jpg.006.jpg</init_from>
+      <init_from>calyx_closeup.jpg</init_from>
     </image>
     <image id="calyx_closeup_jpg_004" name="calyx_closeup_jpg_004">
-      <init_from>calyx_closeup.jpg.004.jpg</init_from>
+      <init_from>calyx_closeup.jpg</init_from>
     </image>
     <image id="calyx_closeup_jpg" name="calyx_closeup_jpg">
       <init_from>calyx_closeup.jpg</init_from>

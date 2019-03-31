@@ -12,22 +12,22 @@
   </asset>
   <library_images>
     <image id="calyx_closeup_jpg_009" name="calyx_closeup_jpg_009">
-      <init_from>calyx_closeup.jpg.009.jpg</init_from>
+      <init_from>calyx_closeup.jpg</init_from>
     </image>
     <image id="calyx_closeup_jpg_007" name="calyx_closeup_jpg_007">
-      <init_from>calyx_closeup.jpg.007.jpg</init_from>
+      <init_from>calyx_closeup.jpg</init_from>
     </image>
     <image id="calyx_closeup_jpg_004" name="calyx_closeup_jpg_004">
-      <init_from>calyx_closeup.jpg.004.jpg</init_from>
+      <init_from>calyx_closeup.jpg</init_from>
     </image>
     <image id="calyx_closeup_jpg_003" name="calyx_closeup_jpg_003">
-      <init_from>calyx_closeup.jpg.003.jpg</init_from>
+      <init_from>calyx_closeup.jpg</init_from>
     </image>
     <image id="calyx_closeup_jpg_002" name="calyx_closeup_jpg_002">
-      <init_from>calyx_closeup.jpg.002.jpg</init_from>
+      <init_from>calyx_closeup.jpg</init_from>
     </image>
     <image id="calyx_closeup_jpg_001" name="calyx_closeup_jpg_001">
-      <init_from>calyx_closeup.jpg.001.jpg</init_from>
+      <init_from>calyx_closeup.jpg</init_from>
     </image>
     <image id="calyx_closeup_jpg" name="calyx_closeup_jpg">
       <init_from>calyx_closeup.jpg</init_from>
