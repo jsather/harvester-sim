@@ -18,7 +18,7 @@ This package has been tested on ROS Kinetic with Gazebo 7.1.0 on Ubuntu 64-bit 1
 Clone the repo into your [catkin workspace](http://wiki.ros.org/catkin/Tutorials/create_a_workspace) and build using catkin_make.
 ```
 cd ~/catkin_ws/src
-git clone https://github.com/jsather/harvester.git
+git clone https://github.com/jsather/harvester-sim.git
 cd ~/catkin_ws
 catkin_make
 source devel/setup.bash
