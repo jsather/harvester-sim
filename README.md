@@ -24,7 +24,7 @@ catkin_make
 source devel/setup.bash
 ```
 
-Update Gazebo shell variables to point to the harvester world and model files.  
+Add the harvester world and model files to your Gazebo path.
 
 ```
 export GAZEBO_RESOURCE_PATH=~/catkin_ws/src/harvester-sim/harvester_gazebo:$GAZEBO_RESOURCE_PATH
