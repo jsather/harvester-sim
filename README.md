@@ -34,7 +34,7 @@ sudo apt-get install python-rosinstall \
                    ros-kinetic-trac-ik-kinematics-plugin
 ```
 
-* [ruby](https://www.ruby-lang.org/en/downloads/) (used for random plant generation)
+* [ruby](https://www.ruby-lang.org/en/downloads/)
 ```
 sudo apt-get install ruby 
 sudo gem install rubystats
