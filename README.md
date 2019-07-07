@@ -76,7 +76,7 @@ The camera view can be seen on the RQT image viewer.
 ```
 rqt
 ```
-<img src="https://imgur.com/LFBCUxW.jpg" width="300">
+<img src="https://imgur.com/LFBCUxW.jpg" width="450">
 
 ### Next steps
 After testing, interface with [harvester-python](https://github.com/jsather/harvester-python) or your own agent. See havester-python for more details.
