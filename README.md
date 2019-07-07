@@ -1,7 +1,7 @@
 # harvester-sim
 ![harvester-gif](https://imgur.com/0dghLur.gif)
 
-Virtual harvesting environment using ROS and Gazebo. Originally used by Jonathon Sather in his research on autonomous strawberry harvesting. ([paper](https://arxiv.org/abs/1903.02074)) ([video summary](https://youtu.be/C6hrCVv2B-o))
+Virtual harvesting environment using ROS and Gazebo. Originally used by Jonathon Sather in his research on autonomous strawberry harvesting ([paper](https://arxiv.org/abs/1903.02074)) ([video summary](https://youtu.be/C6hrCVv2B-o)).
 
 This stack is a fork of [kinova-ros](https://github.com/Kinovarobotics/kinova-ros) that includes a simulated strawberry world with a procedurally generated strawberry plant. 
 
@@ -39,12 +39,6 @@ sudo apt-get install python-rosinstall \
 sudo apt-get install ruby 
 sudo gem install rubystats
 ```
-
-## File System
- * `harvester_contol`: Launch file to start harvester controllers 
- * `harvester_description`: Where the meshes and URDF specifications live
- * `harvester_gazebo`: Launch file to start harvester gazebo world. Also includes world sdf files
- * `harvester_moveit`: Launch file for MoveIt drivers
  
 ## Installation
 Clone the repo into your [catkin workspace](http://wiki.ros.org/catkin/Tutorials/create_a_workspace) and build using catkin_make.
@@ -63,7 +57,15 @@ export GAZEBO_RESOURCE_PATH=~/catkin_ws/src/harvester-sim/harvester_gazebo:$GAZE
 export GAZEBO_MODEL_PATH=~/catkin_ws/src/harvester-sim/harvester_gazebo/models:$GAZEBO_MODEL_PATH
 ```
 
-## Running the Simulated Environment
+
+## File System
+ * `harvester_contol`: Contains launch file to start harvester controllers 
+ * `harvester_description`: Contains meshes and URDF specifications
+ * `harvester_gazebo`: Contains launch files to start harvester gazebo world. Also includes world sdf files
+ * `harvester_moveit`: Contains launch files for MoveIt drivers
+ 
+## Usage
+### Verify setup
 Run harvester_test.launch to spawn arm and randomly generated plant.
 ``` 
 roslaunch harvester_gazebo harvester_test.launch
@@ -74,10 +76,9 @@ The camera view can be seen on the RQT image viewer.
 ```
 rqt
 ```
-<img src="https://imgur.com/LFBCUxW.jpg" width="480">
+<img src="https://imgur.com/LFBCUxW.jpg" width="300">
 
-
-## Usage
+### Next steps
 After testing, interface with [harvester-python](https://github.com/jsather/harvester-python) or your own agent. See havester-python for more details.
 
 ## Author
